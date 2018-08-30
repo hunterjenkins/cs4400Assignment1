@@ -54,7 +54,7 @@ void nonFlag(char* name){
 int main(int argc, char* argv[])
 {
   //-a is the default
-  char flag = '-a';
+  char flag = 'a';
 
   //0 = False, 1 = True
   int tFlagWasSet = 0;
@@ -73,8 +73,8 @@ int main(int argc, char* argv[])
     //These if statements set the right flags
     if (currentArg[0] == '-')
     {
-      if (currentArg[1] == 'b')      {  flag = '-b'; }
-      else if (currentArg[1] == 'c') {  flag = '-c'; }
+      if (currentArg[1] == 'b')      {  flag = 'b'; }
+      else if (currentArg[1] == 'c') {  flag = 'c'; }
       else if (currentArg[1] == 't') {  tFlagWasSet = 1; }
     }
     else
@@ -88,9 +88,9 @@ int main(int argc, char* argv[])
   //TODO: account for -t flag!
 
   //At this point, we have the correct flags set, and the arguments stored in an array to process.
-  if (flag == '-a')       { flag_a(args); }
-  else if (flag == '-b')  { flag_b(args); }
-  else if (flag == '-c')  { flag_c(args); }
+  if (flag == 'a')       { flag_a(args); }
+  else if (flag == 'b')  { flag_b(args); }
+  else if (flag == 'c')  { flag_c(args); }
 
 
   return 0;
