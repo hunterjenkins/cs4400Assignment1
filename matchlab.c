@@ -23,16 +23,16 @@ void flag_a(char* arguments[])
      char* currentArgument = arguments[index];
 
      printf("%s\n", currentArgument);
-
+     printf("%c\n", *currentArgument);
+     printf("%c\n", *currentArgument++);
      //TODO: how to iterate through characters in a string???????
      //iterate through each character in order to check the Criteria
-     int characterIndex;
-     for (currentArgument = 0; *currentArgument != '\0'; currentArgument++)
-     {
-          printf("%c\n", *currentArgument);
-          // printf("%s\n", currentArgument );
-          // printf("%s\n", currentArgument[characterIndex] ); <--- This causes a seg fault?
-     }
+     // for (currentArgument = 0; *currentArgument != '\0'; currentArgument++)
+     // {
+     //      printf("%c\n", *currentArgument);
+     //      // printf("%s\n", currentArgument );
+     //      // printf("%s\n", currentArgument[characterIndex] ); <--- This causes a seg fault?
+     // }
 
 
 
