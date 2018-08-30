@@ -17,12 +17,13 @@ void flag_a(char* arguments[])
    for (index = 0; index < sizeof(arguments); index++)
    {
      //stop if there are no more arguments
-     if (arguments[index] == "empty") { printf("breaking..,\n") ;break; }
+     if (arguments[index] == "empty") { break; }
 
      //This should grab the current 'string' and place it into an array of characters?
      char* currentArgument = arguments[index];
-     printf("%s\n", currentArgument );
+     printf("%s\n", currentArgument[0] );
 
+     //TODO: how to iterate through characters in a string???????
      //iterate through each character in order to check the Criteria
      int characterIndex;
      for (characterIndex = 0; characterIndex < sizeof(currentArgument); characterIndex++)
