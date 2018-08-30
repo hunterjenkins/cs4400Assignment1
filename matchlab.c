@@ -20,7 +20,7 @@ void flag_a(char* arguments[])
      if (arguments[index] == "empty") { break;}
 
      //This should grab the current 'string' and place it into an array of characters?
-     char currentArgument[sizeof(arguments[index])] = arguments[index];
+     char currentArgument[10] = arguments[index];
 
      //iterate through each character in order to check the Criteria
      int characterIndex;
