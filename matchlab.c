@@ -17,7 +17,7 @@ void flag_a(char* arguments[])
    for (index = 0; index < sizeof(arguments); index++)
    {
      //stop if there are no more arguments
-     if (arguments[index] == "empty") { break; }
+     if (arguments[index] == "empty") { printf("breaking..,\n") ;break; }
 
      //This should grab the current 'string' and place it into an array of characters?
      char* currentArgument = arguments[index];
@@ -27,7 +27,7 @@ void flag_a(char* arguments[])
      int characterIndex;
      for (characterIndex = 0; characterIndex < sizeof(currentArgument); characterIndex++)
      {
-        printf("test\n" );
+        printf("%s\n", );
           // printf("%s\n", currentArgument );
           // printf("%s\n", currentArgument[characterIndex] ); <--- This causes a seg fault?
      }
