@@ -16,7 +16,8 @@ void flag_a(char* arguments[])
    int index;
    for (index = 0; index < sizeof(arguments); index++)
    {
-     char currentArgument[] = arguments[index]; //This should grab the current 'string' and place it into an array of characters?
+     //This should grab the current 'string' and place it into an array of characters?
+     char currentArgument[] = arguments[index];
 
      //iterate through each character in order to check the Criteria
      int characterIndex;
@@ -59,9 +60,9 @@ int main(int argc, char* argv[])
   //0 = False, 1 = True
   int tFlagWasSet = 0;
 
-  //Array of arguments coming in:
-  char* args[];
-  int argsCount = 0;
+  //Keep track of how many flags to we can know how many
+  //additional arguments there are to process
+  int flagCount = 0;
 
   //For each argument, process it accordingly
   int i;
@@ -73,12 +74,21 @@ int main(int argc, char* argv[])
     //These if statements set the right flags
     if (currentArg[0] == '-')
     {
-      if (currentArg[1] == 'b')      {  flag = 'b'; }
-      else if (currentArg[1] == 'c') {  flag = 'c'; }
-      else if (currentArg[1] == 't') {  tFlagWasSet = 1; }
+      if (current[1] == 'a' )        {  flagCount++; }
+      else if (currentArg[1] == 'b') {  flag = 'b'; flagCount++; }
+      else if (currentArg[1] == 'c') {  flag = 'c'; flagCount++;}
+      else if (currentArg[1] == 't') {  tFlagWasSet = 1; flagCount++; }
     }
     else
     {
+      //-1 because the first is always the name of the file.
+      //-flagCount because we don't want to count flags, just arguments
+      int numberOfExactArguments = argc - 1 - flagCount;
+
+      //Array of arguments coming in:
+      char* args[numberOfExactArguments];
+      int argsCount = 0;
+
       //Add the current argument to the array
       args[argsCount] = currentArg;
       argsCount++;
@@ -94,3 +104,4 @@ int main(int argc, char* argv[])
 
 
   return 0;
+}
