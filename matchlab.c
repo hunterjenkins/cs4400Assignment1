@@ -27,7 +27,7 @@ void flag_a(char* arguments[])
      //TODO: how to iterate through characters in a string???????
      //iterate through each character in order to check the Criteria
      int characterIndex;
-     for (characterIndex = 0; *currentArgument != '\0'; characterIndex++)
+     for (currentArgument = 0; *currentArgument != '\0'; currentArgument++)
      {
           printf("%c\n", *currentArgument);
           // printf("%s\n", currentArgument );
