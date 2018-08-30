@@ -21,12 +21,14 @@ void flag_a(char* arguments[])
 
      //This should grab the current 'string' and place it into an array of characters?
      char* currentArgument = arguments[index];
+     printf("%s\n", currentArgument );
 
      //iterate through each character in order to check the Criteria
      int characterIndex;
      for (characterIndex = 0; characterIndex < sizeof(currentArgument); characterIndex++)
      {
-          // printf("%s\n", currentArgument[characterIndex] );
+          // printf("%s\n", currentArgument );
+          // printf("%s\n", currentArgument[characterIndex] ); <--- This causes a seg fault?
      }
 
 
