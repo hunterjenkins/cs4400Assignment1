@@ -26,7 +26,7 @@ void flag_a(char* arguments[])
      int characterIndex;
      for (characterIndex = 0; characterIndex < sizeof(currentArgument); characterIndex++)
      {
-
+          printf("%s\n", currentArgument[characterIndex] );
      }
 
 
