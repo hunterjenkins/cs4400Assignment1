@@ -27,7 +27,6 @@ void flag_a(char* arguments[])
      int characterIndex;
      for (characterIndex = 0; characterIndex < sizeof(currentArgument); characterIndex++)
      {
-        printf("%s\n", );
           // printf("%s\n", currentArgument );
           // printf("%s\n", currentArgument[characterIndex] ); <--- This causes a seg fault?
      }
