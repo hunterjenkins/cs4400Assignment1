@@ -33,12 +33,12 @@ void flag_a(char* arguments[])
      //This should grab the current 'string' and place it into an array of characters?
      char* currentArgument = arguments[index];
 
-     char * currentCharacater; // first copy the pointer to not change the original
+     char* currentCharacater; // first copy the pointer to not change the original
 
     //TODO: assure only one "no" is printed. I think it'll be a flag that is set/checked.
 
     //check if first character is not b
-    if (*currentCharacater != 'b')
+    if (*currentArgument != 'b')
     {
       printf("no\n");
       printf("initial check\n" );
