@@ -37,7 +37,7 @@ void flag_a(char* arguments[])
 
      //iterate through each character in order to check the Criteria.
      //Update: as we are iterating, we will be checking the previous character. This
-     //will allow us to maintain the order of events. 
+     //will allow us to maintain the order of events.
      for (currentCharacater = currentArgument; *currentCharacater != '\0'; currentCharacater++) {
 
         //Update the letterBRepCounter
@@ -61,6 +61,7 @@ void flag_a(char* arguments[])
 
           underscoreCounter++;
         }
+
         else if (*currentCharacater == 't')
         {
 
@@ -81,16 +82,53 @@ void flag_a(char* arguments[])
         }
         else if (*currentCharacater == '=')
         {
+
+          //Check t.
+          if (letterTCounter > 7)
+          {
+            printf("no\n");
+            printf("4\n");
+          }
+          else if (letterTCounter < 3)
+          {
+            printf("no\n");
+            printf("5\n");
+          }
+
+
           characterEqualsCounter++;
         }
+        else if (*currentCharacater >= 65 && *currentCharacater <= 90) { //ASCII chart
 
+          //check equals
+          if (characterEqualsCounter != 2)
+          {
+            printf("no\n");
+            printf("6\n");
+          }
 
-        //This check is seperate because we want to count multiple times, where
-        //we don't with the ones above.
-        if (*currentCharacater >= 65 && *currentCharacater <= 90) { //ASCII chart
           upperCaseCount++;
         }
      }
+
+     if (upperCaseCount%2 == 0) //If even
+     {
+       printf("no\n");
+       printf("7\n");
+     }
+     //Since it has passed all of these tests, we know it's matching so we
+     //print yes!
+     else {
+       printf("yes\n");
+
+       printf("stats:\n");
+       printf("letterBRepCounter %d\n", letterBRepCounter);
+       printf("underscoreCounter %d\n", underscoreCounter);
+       printf("letterTCounter %d\n", letterTCounter);
+       printf("characterEqualsCounter %d\n", characterEqualsCounter);
+       printf("upperCaseCount %d\n", upperCaseCount);
+     }
+
 
      //Note: the if statements are more simple as to avoid bugs.
      // I learned this technique from my internship.
@@ -115,46 +153,34 @@ void flag_a(char* arguments[])
      // }
 
      //Letter T conditions
-     else if (letterTCounter > 7)
-     {
-       printf("no\n");
-       printf("4\n");
-     }
-     else if (letterTCounter < 3)
-     {
-       printf("no\n");
-       printf("5\n");
-     }
+     // else if (letterTCounter > 7)
+     // {
+     //   printf("no\n");
+     //   printf("4\n");
+     // }
+     // else if (letterTCounter < 3)
+     // {
+     //   printf("no\n");
+     //   printf("5\n");
+     // }
 
      //= character conditions
-     else if (characterEqualsCounter != 2)
-     {
-       printf("no\n");
-       printf("6\n");
-     }
+     // else if (characterEqualsCounter != 2)
+     // {
+     //   printf("no\n");
+     //   printf("6\n");
+     // }
 
      //Uppercase conditions
-     else if (upperCaseCount%2 == 0) //If even
-     {
-       printf("no\n");
-       printf("7\n");
-     }
+     // else if (upperCaseCount%2 == 0) //If even
+     // {
+     //   printf("no\n");
+     //   printf("7\n");
+     // }
 
 
 
-     //Since it has passed all of these tests, we know it's matching so we
-     //print yes!
-     else {
-       printf("yes\n");
 
-       printf("stats:\n");
-       printf("letterBRepCounter %d\n", letterBRepCounter);
-       printf("underscoreCounter %d\n", underscoreCounter);
-       printf("letterTCounter %d\n", letterTCounter);
-       printf("characterEqualsCounter %d\n", characterEqualsCounter);
-       printf("upperCaseCount %d\n", upperCaseCount);
-
-     }
 
 
    }
