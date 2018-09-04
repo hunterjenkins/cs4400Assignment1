@@ -70,38 +70,45 @@ void flag_a(char* arguments[])
      if (letterBRepCounter%2 == 0) //If even
      {
        printf("no\n");
+       printf("1\n");
      }
 
      //Underscore conditions
      else if (underscoreCounter == 0)
      {
        printf("no\n");
+       printf("2\n");
      }
      else if (underscoreCounter > 1)
      {
         printf("no\n");
+        printf("3\n");
      }
 
      //Letter T conditions
      else if (letterTCounter > 7)
      {
        printf("no\n");
+       printf("4\n");
      }
      else if (letterTCounter < 3)
      {
        printf("no\n");
+       printf("5\n");
      }
 
      //= character conditions
      else if (characterEqualsCounter != 2)
      {
        printf("no\n");
+       printf("6\n");
      }
 
      //Uppercase conditions
      else if (upperCaseCount%2 == 0) //If even
      {
        printf("no\n");
+       printf("7\n");
      }
 
 
