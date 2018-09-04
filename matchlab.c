@@ -36,8 +36,6 @@ void flag_a(char* arguments[])
      //iterate through each character in order to check the Criteria
      for (currentCharacater = currentArgument; *currentCharacater != '\0'; currentCharacater++) {
 
-       printf("current character's ascii value: %d\n", *currentCharacater);
-
         //Update the letterBRepCounter
         if (*currentCharacater == 'b' || *currentCharacater == 'B')
         {
