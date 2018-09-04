@@ -38,16 +38,20 @@ void flag_a(char* arguments[])
      }
 
      //Underscore condition
-     if (underscoreCounter == 0 || underscoreCounter > 1)
+     if (underscoreCounter == 0)
      {
-        printf("no");
+       printf("no\n");
+     }
+     else if (underscoreCounter > 1)
+     {
+        printf("no\n");
      }
 
 
      //Since it has passed all of these tests, we know it's matching so we
      //print yes!
      else {
-       printf("yes");
+       printf("yes\n");
      }
 
 
