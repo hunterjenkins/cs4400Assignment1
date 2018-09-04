@@ -22,9 +22,6 @@ void flag_a(char* arguments[])
      //This should grab the current 'string' and place it into an array of characters?
      char* currentArgument = arguments[index];
 
-     // printf("%s\n", currentArgument);
-     // printf("%c\n", *currentArgument);
-
      char * t; // first copy the pointer to not change the original
 
      for (t = currentArgument; *t != '\0'; t++) {
