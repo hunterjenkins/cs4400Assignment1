@@ -33,21 +33,50 @@ void flag_a(char* arguments[])
 
      char * currentCharacater; // first copy the pointer to not change the original
 
-     //iterate through each character in order to check the Criteria
+    //TODO: assure only one "no" is printed. I think it'll be a flag that is set/checked.
+
+     //iterate through each character in order to check the Criteria.
+     //Update: as we are iterating, we will be checking the previous character. This
+     //will allow us to maintain the order of events. 
      for (currentCharacater = currentArgument; *currentCharacater != '\0'; currentCharacater++) {
 
         //Update the letterBRepCounter
         if (*currentCharacater == 'b')
         {
           letterBRepCounter++;
+
+
         }
         //Update the underscoreCounter variable.
         else if (*currentCharacater == '_')
         {
+
+          //we know that b should be done at this point. Check it's truthfulness.
+          if (letterBRepCounter%2 == 0) //If even
+          {
+            printf("no\n");
+            printf("1\n");
+          }
+
+
           underscoreCounter++;
         }
         else if (*currentCharacater == 't')
         {
+
+          //We know that _ should be done. Check it's truthfulness.
+          if (underscoreCounter == 0)
+          {
+            printf("no\n");
+            printf("2\n");
+          }
+          else if (underscoreCounter > 1)
+          {
+             printf("no\n");
+             printf("3\n");
+          }
+
+
           letterTCounter++;
         }
         else if (*currentCharacater == '=')
@@ -66,24 +95,24 @@ void flag_a(char* arguments[])
      //Note: the if statements are more simple as to avoid bugs.
      // I learned this technique from my internship.
 
-     //Letter B conditions
-     if (letterBRepCounter%2 == 0 || letterBRepCounter == 1) //If even
-     {
-       printf("no\n");
-       printf("1\n");
-     }
+     // //Letter B conditions
+     // if (letterBRepCounter%2 == 0) //If even
+     // {
+     //   printf("no\n");
+     //   printf("1\n");
+     // }
 
      //Underscore conditions
-     else if (underscoreCounter == 0)
-     {
-       printf("no\n");
-       printf("2\n");
-     }
-     else if (underscoreCounter > 1)
-     {
-        printf("no\n");
-        printf("3\n");
-     }
+     // else if (underscoreCounter == 0)
+     // {
+     //   printf("no\n");
+     //   printf("2\n");
+     // }
+     // else if (underscoreCounter > 1)
+     // {
+     //    printf("no\n");
+     //    printf("3\n");
+     // }
 
      //Letter T conditions
      else if (letterTCounter > 7)
@@ -105,7 +134,7 @@ void flag_a(char* arguments[])
      }
 
      //Uppercase conditions
-     else if (upperCaseCount%2 == 0 || upperCaseCount == 1) //If even
+     else if (upperCaseCount%2 == 0) //If even
      {
        printf("no\n");
        printf("7\n");
