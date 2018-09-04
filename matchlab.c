@@ -47,7 +47,7 @@ void flag_a(char* arguments[])
      //Note: the if statements are more simple as to avoid bugs.
      // I learned this technique from my internship.
 
-     printf("letterBRepCounter %d\n", letterBRepCounter);
+     // printf("letterBRepCounter %d\n", letterBRepCounter);
      //Letter B conditions
      if (letterBRepCounter%2 == 0) //If even
      {
