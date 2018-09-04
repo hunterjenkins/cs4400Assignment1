@@ -12,6 +12,8 @@ void flag_a(char* arguments[])
    - an odd number of uppercase letters.
    */
 
+   int underscoreCounter = 0;
+
    //Handle each argument individually
    int index;
    for (index = 0; index < sizeof(arguments); index++)
@@ -22,22 +24,31 @@ void flag_a(char* arguments[])
      //This should grab the current 'string' and place it into an array of characters?
      char* currentArgument = arguments[index];
 
-     char * t; // first copy the pointer to not change the original
+     char * currentCharacater; // first copy the pointer to not change the original
 
-     for (t = currentArgument; *t != '\0'; t++) {
-        printf("%c\n", *t);
+     //iterate through each character in order to check the Criteria
+     for (currentCharacater = currentArgument; *currentCharacater != '\0'; currentCharacater++) {
+        printf("%c\n", *currentCharacater);
+
+        //Update the underscoreCounter variable.
+        if (*currentCharacater == '_')
+        {
+          underscoreCounter++;
+        }
+     }
+
+     //Underscore condition
+     if (underscoreCounter == 0 || underscoreCounter > 1)
+     {
+        printf("no");
      }
 
 
-     //TODO: how to iterate through characters in a string???????
-     //iterate through each character in order to check the Criteria
-     // for (currentArgument = 0; *currentArgument != '\0'; currentArgument++)
-     // {
-     //      printf("%c\n", *currentArgument);
-     //      // printf("%s\n", currentArgument );
-     //      // printf("%s\n", currentArgument[characterIndex] ); <--- This causes a seg fault?
-     // }
-
+     //Since it has passed all of these tests, we know it's matching so we
+     //print yes!
+     else {
+       printf("yes");
+     }
 
 
    }
