@@ -28,7 +28,7 @@ void flag_a(char* arguments[])
 
      //iterate through each character in order to check the Criteria
      for (currentCharacater = currentArgument; *currentCharacater != '\0'; currentCharacater++) {
-        printf("%c\n", *currentCharacater);
+        // printf("%c\n", *currentCharacater);
 
         //Update the underscoreCounter variable.
         if (*currentCharacater == '_')
