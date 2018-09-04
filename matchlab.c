@@ -37,111 +37,121 @@ void flag_a(char* arguments[])
 
     //TODO: assure only one "no" is printed. I think it'll be a flag that is set/checked.
 
-     //iterate through each character in order to check the Criteria.
-     //Update: as we are iterating, we will be checking the previous character. This
-     //will allow us to maintain the order of events.
-     for (currentCharacater = currentArgument; *currentCharacater != '\0'; currentCharacater++) {
+    //check if first character is not b
+    if (*currentCharacater != 'b')
+    {
+      printf("no\n");
+      printf("initial check\n", );
+    }
+    else {
+      //iterate through each character in order to check the Criteria.
+      //Update: as we are iterating, we will be checking the previous character. This
+      //will allow us to maintain the order of events.
+      for (currentCharacater = currentArgument; *currentCharacater != '\0'; currentCharacater++)
+      {
 
-        //Update the letterBRepCounter
-        if (*currentCharacater == 'b')
-        {
-          letterBRepCounter++;
-        }
-        //Update the underscoreCounter variable.
-        else if (*currentCharacater == '_')
-        {
+         //Update the letterBRepCounter
+         if (*currentCharacater == 'b')
+         {
+           letterBRepCounter++;
+         }
+         //Update the underscoreCounter variable.
+         else if (*currentCharacater == '_')
+         {
 
-          //we know that b should be done at this point. Check it's truthfulness.
-          if (letterBRepCounter%2 == 0) //If even
-          {
-            printf("no\n");
-            printf("1\n");
-            should_continue = 0;
-            break;
-          }
-
-          underscoreCounter++;
-        }
-
-        else if (*currentCharacater == 't')
-        {
-
-          //We know that _ should be done. Check it's truthfulness.
-          if (underscoreCounter == 0)
-          {
-            printf("no\n");
-            printf("2\n");
-            should_continue = 0;
-            break;
-          }
-          else if (underscoreCounter > 1)
-          {
+           //we know that b should be done at this point. Check it's truthfulness.
+           if (letterBRepCounter%2 == 0) //If even
+           {
              printf("no\n");
-             printf("3\n");
+             printf("1\n");
              should_continue = 0;
              break;
-          }
+           }
 
-          letterTCounter++;
-        }
-        else if (*currentCharacater == '=')
+           underscoreCounter++;
+         }
+
+         else if (*currentCharacater == 't')
+         {
+
+           //We know that _ should be done. Check it's truthfulness.
+           if (underscoreCounter == 0)
+           {
+             printf("no\n");
+             printf("2\n");
+             should_continue = 0;
+             break;
+           }
+           else if (underscoreCounter > 1)
+           {
+              printf("no\n");
+              printf("3\n");
+              should_continue = 0;
+              break;
+           }
+
+           letterTCounter++;
+         }
+         else if (*currentCharacater == '=')
+         {
+
+           //Check t.
+           if (letterTCounter > 7)
+           {
+             printf("no\n");
+             printf("4\n");
+             should_continue = 0;
+             break;
+           }
+           else if (letterTCounter < 3)
+           {
+             printf("no\n");
+             printf("5\n");
+             should_continue = 0;
+             break;
+           }
+
+
+           characterEqualsCounter++;
+         }
+         else if (*currentCharacater >= 65 && *currentCharacater <= 90) { //ASCII chart
+
+           //check equals
+           if (characterEqualsCounter != 2)
+           {
+             printf("no\n");
+             printf("6\n");
+             should_continue = 0;
+             break;
+           }
+
+           upperCaseCount++;
+         }
+      }
+
+
+      if (should_continue != 0)
+      {
+        if (upperCaseCount%2 == 0) //If even
         {
-
-          //Check t.
-          if (letterTCounter > 7)
-          {
-            printf("no\n");
-            printf("4\n");
-            should_continue = 0;
-            break;
-          }
-          else if (letterTCounter < 3)
-          {
-            printf("no\n");
-            printf("5\n");
-            should_continue = 0;
-            break;
-          }
-
-
-          characterEqualsCounter++;
+          printf("no\n");
+          printf("7\n");
         }
-        else if (*currentCharacater >= 65 && *currentCharacater <= 90) { //ASCII chart
+        //Since it has passed all of these tests, we know it's matching so we
+        //print yes!
+        else {
+          printf("yes\n");
 
-          //check equals
-          if (characterEqualsCounter != 2)
-          {
-            printf("no\n");
-            printf("6\n");
-            should_continue = 0;
-            break;
-          }
-
-          upperCaseCount++;
+          printf("stats:\n");
+          printf("letterBRepCounter %d\n", letterBRepCounter);
+          printf("underscoreCounter %d\n", underscoreCounter);
+          printf("letterTCounter %d\n", letterTCounter);
+          printf("characterEqualsCounter %d\n", characterEqualsCounter);
+          printf("upperCaseCount %d\n", upperCaseCount);
         }
-     }
+      }
+    }
 
-
-     if (should_continue != 0)
-     {
-       if (upperCaseCount%2 == 0) //If even
-       {
-         printf("no\n");
-         printf("7\n");
-       }
-       //Since it has passed all of these tests, we know it's matching so we
-       //print yes!
-       else {
-         printf("yes\n");
-
-         printf("stats:\n");
-         printf("letterBRepCounter %d\n", letterBRepCounter);
-         printf("underscoreCounter %d\n", underscoreCounter);
-         printf("letterTCounter %d\n", letterTCounter);
-         printf("characterEqualsCounter %d\n", characterEqualsCounter);
-         printf("upperCaseCount %d\n", upperCaseCount);
-       }
-     }
 
 
 
