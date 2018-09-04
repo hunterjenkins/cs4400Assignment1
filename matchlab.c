@@ -4,9 +4,9 @@
 void flag_a(char* arguments[])
 {
    /*
-   -a Criteria:
-   - any odd number of repetitions of the letter “b”;   --> TODO: find out if this is for upper and lowercase
-   - exactly one “_”;                                             --> Create a counter var. If var exceeds 1 or is 0, not matching
+   -a Criteria:                                                       STATUS
+   - any odd number of repetitions of the letter “b”;             --> TODO: find out if this is for upper and lowercase
+   - exactly one “_”;                                             --> DONE: Create a counter var. If var exceeds 1 or is 0, not matching
    - between 3 and 7 repetitions (inclusive) of the letter “t”;
    - exactly two “=”s; and
    - an odd number of uppercase letters.
@@ -47,8 +47,16 @@ void flag_a(char* arguments[])
      //Note: the if statements are more simple as to avoid bugs.
      // I learned this technique from my internship.
 
+     printf("letterBRepCounter %d\n", letterBRepCounter);
+     //Letter B conditions
+     if (letterBRepCounter%2 == 0) //If even
+     {
+       printf("no\n");
+     }
+
+
      //Underscore conditions
-     if (underscoreCounter == 0)
+     else if (underscoreCounter == 0)
      {
        printf("no\n");
      }
