@@ -20,6 +20,8 @@ void flag_a(char* arguments[])
    int characterEqualsCounter = 0;
    int upperCaseCount         = 0;
 
+   int should_continue        = 1; //1 = true, 0 = false
+
 
    //Handle each argument individually
    int index;
@@ -44,8 +46,6 @@ void flag_a(char* arguments[])
         if (*currentCharacater == 'b')
         {
           letterBRepCounter++;
-
-
         }
         //Update the underscoreCounter variable.
         else if (*currentCharacater == '_')
@@ -56,8 +56,9 @@ void flag_a(char* arguments[])
           {
             printf("no\n");
             printf("1\n");
+            should_continue = 0;
+            break;
           }
-
 
           underscoreCounter++;
         }
@@ -70,13 +71,16 @@ void flag_a(char* arguments[])
           {
             printf("no\n");
             printf("2\n");
+            should_continue = 0;
+            break;
           }
           else if (underscoreCounter > 1)
           {
              printf("no\n");
              printf("3\n");
+             should_continue = 0;
+             break;
           }
-
 
           letterTCounter++;
         }
@@ -88,11 +92,15 @@ void flag_a(char* arguments[])
           {
             printf("no\n");
             printf("4\n");
+            should_continue = 0;
+            break;
           }
           else if (letterTCounter < 3)
           {
             printf("no\n");
             printf("5\n");
+            should_continue = 0;
+            break;
           }
 
 
@@ -105,29 +113,37 @@ void flag_a(char* arguments[])
           {
             printf("no\n");
             printf("6\n");
+            should_continue = 0;
+            break;
           }
 
           upperCaseCount++;
         }
      }
 
-     if (upperCaseCount%2 == 0) //If even
-     {
-       printf("no\n");
-       printf("7\n");
-     }
-     //Since it has passed all of these tests, we know it's matching so we
-     //print yes!
-     else {
-       printf("yes\n");
 
-       printf("stats:\n");
-       printf("letterBRepCounter %d\n", letterBRepCounter);
-       printf("underscoreCounter %d\n", underscoreCounter);
-       printf("letterTCounter %d\n", letterTCounter);
-       printf("characterEqualsCounter %d\n", characterEqualsCounter);
-       printf("upperCaseCount %d\n", upperCaseCount);
+     if (should_continue != 0)
+     {
+       if (upperCaseCount%2 == 0) //If even
+       {
+         printf("no\n");
+         printf("7\n");
+       }
+       //Since it has passed all of these tests, we know it's matching so we
+       //print yes!
+       else {
+         printf("yes\n");
+
+         printf("stats:\n");
+         printf("letterBRepCounter %d\n", letterBRepCounter);
+         printf("underscoreCounter %d\n", underscoreCounter);
+         printf("letterTCounter %d\n", letterTCounter);
+         printf("characterEqualsCounter %d\n", characterEqualsCounter);
+         printf("upperCaseCount %d\n", upperCaseCount);
+       }
      }
+
+
 
 
      //Note: the if statements are more simple as to avoid bugs.
