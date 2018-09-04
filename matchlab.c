@@ -127,6 +127,13 @@ void flag_a(char* arguments[])
 
            upperCaseCount++;
          }
+         else {
+           //this means a bad character was in the string
+           printf("no\n");
+           printf("Bad character\n");
+           should_continue = 0;
+           break;
+         }
       }
 
 
