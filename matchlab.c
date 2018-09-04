@@ -67,7 +67,7 @@ void flag_a(char* arguments[])
      // I learned this technique from my internship.
 
      //Letter B conditions
-     if (letterBRepCounter%2 == 0) //If even
+     if (letterBRepCounter%2 == 0 || letterBRepCounter == 1) //If even
      {
        printf("no\n");
        printf("1\n");
@@ -105,7 +105,7 @@ void flag_a(char* arguments[])
      }
 
      //Uppercase conditions
-     else if (upperCaseCount%2 == 0) //If even
+     else if (upperCaseCount%2 == 0 || upperCaseCount == 1) //If even
      {
        printf("no\n");
        printf("7\n");
@@ -124,7 +124,7 @@ void flag_a(char* arguments[])
        printf("letterTCounter %d\n", letterTCounter);
        printf("characterEqualsCounter %d\n", characterEqualsCounter);
        printf("upperCaseCount %d\n", upperCaseCount);
-  
+
      }
 
 
