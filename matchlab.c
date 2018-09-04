@@ -37,7 +37,7 @@ void flag_a(char* arguments[])
      for (currentCharacater = currentArgument; *currentCharacater != '\0'; currentCharacater++) {
 
         //Update the letterBRepCounter
-        if (*currentCharacater == 'b' || *currentCharacater == 'B')
+        if (*currentCharacater == 'b')
         {
           letterBRepCounter++;
         }
@@ -46,7 +46,7 @@ void flag_a(char* arguments[])
         {
           underscoreCounter++;
         }
-        else if (*currentCharacater == 't' || *currentCharacater == 'T')
+        else if (*currentCharacater == 't')
         {
           letterTCounter++;
         }
@@ -108,7 +108,7 @@ void flag_a(char* arguments[])
      else if (upperCaseCount%2 == 0) //If even
      {
        printf("no\n");
-       printf("7\n");
+       printf("73\n");
      }
 
 
