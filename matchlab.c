@@ -108,7 +108,7 @@ void flag_a(char* arguments[])
      else if (upperCaseCount%2 == 0) //If even
      {
        printf("no\n");
-       printf("73\n");
+       printf("7\n");
      }
 
 
@@ -117,6 +117,14 @@ void flag_a(char* arguments[])
      //print yes!
      else {
        printf("yes\n");
+
+       printf("stats:\n");
+       printf("letterBRepCounter %d\n", letterBRepCounter);
+       printf("underscoreCounter %d\n", underscoreCounter);
+       printf("letterTCounter %d\n", letterTCounter);
+       printf("characterEqualsCounter %d\n", characterEqualsCounter);
+       printf("upperCaseCount %d\n", upperCaseCount);
+  
      }
 
 
