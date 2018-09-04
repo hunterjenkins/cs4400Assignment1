@@ -6,15 +6,17 @@ void flag_a(char* arguments[])
    /*
    -a Criteria:                                                       STATUS
    - any odd number of repetitions of the letter “b”;             --> TODO: find out if this is for upper and lowercase
-   - exactly one “_”;                                             --> DONE: Create a counter var. If var exceeds 1 or is 0, not matching
-   - between 3 and 7 repetitions (inclusive) of the letter “t”;
-   - exactly two “=”s; and
-   - an odd number of uppercase letters.
+   - exactly one “_”;                                             --> DONE
+   - between 3 and 7 repetitions (inclusive) of the letter “t”;   --> TODO: find out if this is for upper and lowercase
+   - exactly two “=”s; and                                        --> DONE
+   - an odd number of uppercase letters.                          --> TODO:
    */
 
 
-   int letterBRepCounter = 0;
-   int underscoreCounter = 0;
+   int letterBRepCounter      = 0;
+   int underscoreCounter      = 0;
+   int letterTCounter         = 0;
+   int characterEqualsCounter = 0;
 
 
    //Handle each argument individually
@@ -32,6 +34,8 @@ void flag_a(char* arguments[])
      //iterate through each character in order to check the Criteria
      for (currentCharacater = currentArgument; *currentCharacater != '\0'; currentCharacater++) {
 
+       printf("current character's ascii value: %d\n", *currentCharacater);
+
         //Update the letterBRepCounter
         if (*currentCharacater == 'b' || *currentCharacater == 'B')
         {
@@ -42,18 +46,24 @@ void flag_a(char* arguments[])
         {
           underscoreCounter++;
         }
+        else if (*currentCharacater == 't' || *currentCharacater == 'T')
+        {
+          letterTCounter++;
+        }
+        else if (*currentCharacater == '=')
+        {
+          characterEqualsCounter++;
+        }
      }
 
      //Note: the if statements are more simple as to avoid bugs.
      // I learned this technique from my internship.
 
-     // printf("letterBRepCounter %d\n", letterBRepCounter);
      //Letter B conditions
      if (letterBRepCounter%2 == 0) //If even
      {
        printf("no\n");
      }
-
 
      //Underscore conditions
      else if (underscoreCounter == 0)
@@ -63,6 +73,22 @@ void flag_a(char* arguments[])
      else if (underscoreCounter > 1)
      {
         printf("no\n");
+     }
+
+     //Letter T conditions
+     else if (letterTCounter > 7)
+     {
+       printf("no\n");
+     }
+     else if (letterTCounter < 3)
+     {
+       printf("no\n");
+     }
+
+     //= character conditions
+     else if (characterEqualsCounter != 2)
+     {
+       printf("no\n");
      }
 
 
@@ -125,10 +151,10 @@ int main(int argc, char* argv[])
     //These if statements set the right flags
     if (currentArg[0] == '-')
     {
-      if (currentArg[1] == 'a' )     {                     }
-      else if (currentArg[1] == 'b') {  flag = 'b';        }
-      else if (currentArg[1] == 'c') {  flag = 'c';        }
-      else if (currentArg[1] == 't') {  tFlagWasSet = 1;   }
+      if (currentArg[1] == 'a' )     {                   }
+      else if (currentArg[1] == 'b') {  flag = 'b';      }
+      else if (currentArg[1] == 'c') {  flag = 'c';      }
+      else if (currentArg[1] == 't') {  tFlagWasSet = 1; }
     }
     else
     {
