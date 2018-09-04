@@ -9,14 +9,16 @@ void flag_a(char* arguments[])
    - exactly one “_”;                                             --> DONE
    - between 3 and 7 repetitions (inclusive) of the letter “t”;   --> TODO: find out if this is for upper and lowercase
    - exactly two “=”s; and                                        --> DONE
-   - an odd number of uppercase letters.                          --> TODO:
+   - an odd number of uppercase letters.                          --> DONE
    */
 
 
+   //Counters
    int letterBRepCounter      = 0;
    int underscoreCounter      = 0;
    int letterTCounter         = 0;
    int characterEqualsCounter = 0;
+   int upperCaseCount         = 0;
 
 
    //Handle each argument individually
@@ -54,6 +56,13 @@ void flag_a(char* arguments[])
         {
           characterEqualsCounter++;
         }
+
+
+        //This check is seperate because we want to count multiple times, where
+        //we don't with the ones above.
+        if (*currentCharacater >= 65 && *currentCharacater <= 90) { //ASCII chart
+          upperCaseCount++;
+        }
      }
 
      //Note: the if statements are more simple as to avoid bugs.
@@ -87,6 +96,12 @@ void flag_a(char* arguments[])
 
      //= character conditions
      else if (characterEqualsCounter != 2)
+     {
+       printf("no\n");
+     }
+
+     //Uppercase conditions
+     else if (upperCaseCount%2 == 0) //If even
      {
        printf("no\n");
      }
