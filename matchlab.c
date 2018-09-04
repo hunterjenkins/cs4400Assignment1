@@ -41,7 +41,7 @@ void flag_a(char* arguments[])
     if (*currentCharacater != 'b')
     {
       printf("no\n");
-      printf("initial check\n", );
+      printf("initial check\n" );
     }
     else {
       //iterate through each character in order to check the Criteria.
