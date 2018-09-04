@@ -5,14 +5,17 @@ void flag_a(char* arguments[])
 {
    /*
    -a Criteria:
-   - any odd number of repetitions of the letter “b”;
+   - any odd number of repetitions of the letter “b”;   --> TODO: find out if this is for upper and lowercase
    - exactly one “_”;                                             --> Create a counter var. If var exceeds 1 or is 0, not matching
    - between 3 and 7 repetitions (inclusive) of the letter “t”;
    - exactly two “=”s; and
    - an odd number of uppercase letters.
    */
 
+
+   int letterBRepCounter = 0;
    int underscoreCounter = 0;
+
 
    //Handle each argument individually
    int index;
@@ -28,16 +31,23 @@ void flag_a(char* arguments[])
 
      //iterate through each character in order to check the Criteria
      for (currentCharacater = currentArgument; *currentCharacater != '\0'; currentCharacater++) {
-        // printf("%c\n", *currentCharacater);
 
+        //Update the letterBRepCounter
+        if (*currentCharacater == 'b' || *currentCharacater == 'B')
+        {
+          letterBRepCounter++;
+        }
         //Update the underscoreCounter variable.
-        if (*currentCharacater == '_')
+        else if (*currentCharacater == '_')
         {
           underscoreCounter++;
         }
      }
 
-     //Underscore condition
+     //Note: the if statements are more simple as to avoid bugs.
+     // I learned this technique from my internship.
+
+     //Underscore conditions
      if (underscoreCounter == 0)
      {
        printf("no\n");
@@ -46,6 +56,7 @@ void flag_a(char* arguments[])
      {
         printf("no\n");
      }
+
 
 
      //Since it has passed all of these tests, we know it's matching so we
