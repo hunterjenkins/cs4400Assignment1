@@ -321,7 +321,7 @@ void flag_b(char* arguments[])
 
             //TODO: FIX THIS!!!!!! How to create a new string with only odd indecies?
             int counter = 0;
-            for (currentDigit = &sequenceX; *currentDigit != '\0'; currentDigit++)
+            for (currentDigit = *sequenceX; *currentDigit != '\0'; currentDigit++)
             {
               if (counter % 2 == 0) //only touch the even ones
               {
