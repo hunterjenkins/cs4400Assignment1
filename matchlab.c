@@ -150,7 +150,7 @@ void flag_a(char* arguments[], int tFlag)
 
             while (pointer != 0)
             {
-              printf("%s\n", pointer);
+              printf("%c\n", pointer);
               pointer++;
             }
           }
