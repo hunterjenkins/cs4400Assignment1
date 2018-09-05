@@ -148,11 +148,29 @@ void flag_a(char* arguments[], int tFlag)
 
             char* pointer = currentArgument;
 
+            int index = 0;
+
             while (*pointer != '\0')
             {
-              printf("%c\n", *pointer);
-              pointer++;
+              char* tempPointer = ++pointer;
+              if (*tempPointer == '\0')   //This is the last character
+              {
+                pointer[0] = *tempPointer;
+              }
+              else {
+                char temp = pointer[index];
+                pointer[index] = pointer[index+1];
+
+
+
+                printf("%c\n", *pointer);
+                pointer++;
+                index++;
+              }
             }
+
+            printf("new arg: %s\n", pointer);
+
           }
 
         }
