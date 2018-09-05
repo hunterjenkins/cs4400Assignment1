@@ -314,14 +314,14 @@ void flag_b(char* arguments[])
             //now we can check the sequences
             //iterate through sequence x, but only checking odds
 
-            // char* sequenceXCopy = sequenceX;
+            char* sequenceXCopy = sequenceX;
             char* currentDigit; // first copy the pointer to not change the original
 
             char* newSequenceX = "";
 
-            //TODO: FIX THIS!!!!!! How to create a new string with only odd indecies?
+            //TODO: FIX THIS!!!!!! How to create a new string with only even indecies?
             int counter = 0;
-            for (currentDigit = *sequenceX; *currentDigit != '\0'; currentDigit++)
+            for (currentDigit = sequenceXCopy; *currentDigit != '\0'; currentDigit++)
             {
               if (counter % 2 == 0) //only touch the even ones
               {
