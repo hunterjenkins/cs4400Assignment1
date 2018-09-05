@@ -142,7 +142,7 @@ void flag_a(char* arguments[], int tFlag)
             printf("yes\n");
           }
           else {
-            printf("Current arg: %s\n", currentArg);
+            printf("Current arg: %s\n", currentArgument);
           }
 
         }
