@@ -3,18 +3,8 @@
 
 
 
-void flag_a(char* arguments[])
+void flag_a(char* arguments[], int tFlag)
 {
-   /*
-   -a Criteria:                                                       STATUS
-   - any odd number of repetitions of the letter “b”;             --> DONE
-   - exactly one “_”;                                             --> DONE
-   - between 3 and 7 repetitions (inclusive) of the letter “t”;   --> DONE
-   - exactly two “=”s; and                                        --> DONE
-   - an odd number of uppercase letters.                          --> DONE
-   */
-
-
    //Counters
    int letterBRepCounter      = 0;
    int underscoreCounter      = 0;
@@ -147,14 +137,14 @@ void flag_a(char* arguments[])
         //Since it has passed all of these tests, we know it's matching so we
         //print yes!
         else {
-          printf("yes\n");
+          if (tFlag == 0) //We're not transforming
+          {
+            printf("yes\n");
+          }
+          else {
+            printf("Current arg: %s\n", currentArg);
+          }
 
-          printf("stats:\n");
-          printf("letterBRepCounter %d\n", letterBRepCounter);
-          printf("underscoreCounter %d\n", underscoreCounter);
-          printf("letterTCounter %d\n", letterTCounter);
-          printf("characterEqualsCounter %d\n", characterEqualsCounter);
-          printf("upperCaseCount %d\n", upperCaseCount);
         }
       }
     }
@@ -162,7 +152,7 @@ void flag_a(char* arguments[])
 
 }
 
-void flag_b(char* arguments[])
+void flag_b(char* arguments[], int tFlag)
 {
   /*
   -b Criteria:
@@ -398,7 +388,7 @@ void flag_b(char* arguments[])
   }
 }
 
-void flag_c(char* arguments[])
+void flag_c(char* arguments[], int tFlag)
 {
 
 
@@ -699,12 +689,11 @@ int main(int argc, char* argv[])
     }
   }
 
-  //TODO: account for -t flag!
 
   //At this point, we have the correct flags set, and the arguments stored in an array to process.
-  if (flag == 'a')       { flag_a(args); }
-  else if (flag == 'b')  { flag_b(args); }
-  else if (flag == 'c')  { flag_c(args); }
+  if (flag == 'a')       { flag_a(args, tFlagWasSet); }
+  else if (flag == 'b')  { flag_b(args, tFlagWasSet); }
+  else if (flag == 'c')  { flag_c(args, tFlagWasSet); }
 
 
   return 0;
