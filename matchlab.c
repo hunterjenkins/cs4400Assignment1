@@ -251,6 +251,7 @@ void flag_b(char* arguments[])
           }
 
           sequenceXCounter++;
+          printf("Adding this to sequenceX: %d\n", *currentCharacater);
           sequenceX += *currentCharacater; //TODO: verify This works
         }
         else if (*currentCharacater == 'q')
@@ -305,6 +306,7 @@ void flag_b(char* arguments[])
             break;
           }
 
+          printf("Adding this to sequenceY: %d\n", *currentCharacater);
           sequenceY += *currentCharacater;
         }
         else if (*currentCharacater >= 65 && *currentCharacater <= 90) //uppercase
