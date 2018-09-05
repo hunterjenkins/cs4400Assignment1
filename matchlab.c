@@ -204,7 +204,7 @@ void flag_b(char* arguments[])
 
     char* currentCharacater; // first copy the pointer to not change the original
 
-    printf("current character %p\n", *currentArgument);
+    printf("current character %s\n", *currentArgument);
 
    //check if first character is not b
    if (*currentArgument != 'b')
