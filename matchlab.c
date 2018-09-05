@@ -318,7 +318,7 @@ void flag_b(char* arguments[])
             char* newSequenceX = "";
 
             int counter = 0;
-            for (currentDigit = sequenceXCopy; *currentDigit != '\0'; currentCharacater++)
+            for (currentDigit = sequenceXCopy; *currentDigit != '\0'; currentDigit++)
             {
               if (counter % 2 == 0) //only touch the even ones
               {
