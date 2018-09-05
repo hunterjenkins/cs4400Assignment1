@@ -179,14 +179,12 @@ void flag_b(char* arguments[])
   //Counters
   int letterBCounter         = 0;
   int colonCounter           = 0;
-  char* sequenceX            = ""; //NOTE: I don't think this works! need a new data structure
+  char sequenceX[]           = ""; //NOTE: I don't think this works! need a new data structure
   int sequenceXCounter       = 0;
   int letterQCounter         = 0;
   int equalsCounter          = 0;
-  char* sequenceY            = "";
+  char sequenceY[]           = "";
   int upperCaseCount         = 0;
-
-  char str[] = "Geeks";
 
 
   int should_continue        = 1; //1 = true, 0 = false
@@ -254,7 +252,11 @@ void flag_b(char* arguments[])
 
           sequenceXCounter++;
           printf("Adding this to sequenceX: %d\n", *currentCharacater);
-          sequenceX += *currentCharacater; //TODO: verify This works
+
+          //Appends the newly found character
+          int len = strlen(sequenceX);
+          sequenceX[len] = *currentCharacater;
+          sequenceX[len+1] = '\0';
         }
         else if (*currentCharacater == 'q')
         {
@@ -309,7 +311,10 @@ void flag_b(char* arguments[])
           }
 
           printf("Adding this to sequenceY: %d\n", *currentCharacater);
-          sequenceY += *currentCharacater;
+          //Appends the newly found character
+          int len = strlen(sequenceX);
+          sequenceY[len] = *currentCharacater;
+          sequenceY[len+1] = '\0';
         }
         else if (*currentCharacater >= 65 && *currentCharacater <= 90) //uppercase
         {
