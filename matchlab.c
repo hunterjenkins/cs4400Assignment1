@@ -439,7 +439,7 @@ void flag_c(char* arguments[])
     char* currentCharacater; // first copy the pointer to not change the original
 
    //check if first character is not b
-   if (*currentArgument != 'd')
+   if (*currentArgument != 'd' || *currentArgument != '=')
    {
      printf("no\n");
      printf("initial check\n" );
