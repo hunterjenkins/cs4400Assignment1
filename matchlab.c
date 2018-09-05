@@ -148,9 +148,9 @@ void flag_a(char* arguments[], int tFlag)
 
             char* pointer = currentArgument;
 
-            while (pointer != '\0')
+            while (*pointer != '\0')
             {
-              printf("%c\n", pointer);
+              printf("%c\n", *pointer);
               pointer++;
             }
           }
