@@ -576,7 +576,7 @@ void flag_c(char* arguments[])
               should_continue = 0;
               break;
             }
-            if (sequenceX[2] != sequenceY[1]) //if they're not a match
+            if (sequenceX[2] != sequenceY[0]) //if they're not a match
             {
               printf("no\n");
               printf("11\n");
