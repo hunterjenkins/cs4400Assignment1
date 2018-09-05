@@ -321,7 +321,7 @@ void flag_b(char* arguments[])
             //now we can check the sequences
             //iterate through sequence x, but only checking odds
 
-            
+
             if (sequenceX[0] != '\0')
             {
               newSequenceX[0] = sequenceX[0];
@@ -338,6 +338,8 @@ void flag_b(char* arguments[])
             {
               printf("no\n");
               printf("9\n");
+              printf("%s\n", newSequenceX);
+              printf("%s\n", sequenceY);
               should_continue = 0;
               break;
             }
