@@ -194,6 +194,8 @@ void flag_b(char* arguments[])
   int index;
   for (index = 0; index < sizeof(arguments); index++)
   {
+
+
     //stop if there are no more arguments
     if (arguments[index] == "empty") { break; }
 
@@ -201,6 +203,8 @@ void flag_b(char* arguments[])
     char* currentArgument = arguments[index];
 
     char* currentCharacater; // first copy the pointer to not change the original
+
+    printf("current character %p\n", *currentArgument);
 
    //check if first character is not b
    if (*currentArgument != 'b')
@@ -215,8 +219,6 @@ void flag_b(char* arguments[])
      //will allow us to maintain the order of events.
      for (currentCharacater = currentArgument; *currentCharacater != '\0'; currentCharacater++)
      {
-       printf("current character %p\n", *currentCharacater);
-
 
         //Update the letterBCounter
         if (*currentCharacater == 'b')
