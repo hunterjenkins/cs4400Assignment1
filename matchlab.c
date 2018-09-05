@@ -340,13 +340,13 @@ void flag_b(char* arguments[])
         }
         else
         {
-          //this means a bad character was in the string
-          printf("no\n");
-          printf("current character %d\n", *currentCharacater);
-
-          // printf("Bad character%s\n", *currentCharacater);
-          should_continue = 0;
-          break;
+          // //this means a bad character was in the string
+          // printf("no\n");
+          // printf("current character %d\n", *currentCharacater);
+          //
+          // // printf("Bad character%s\n", *currentCharacater);
+          // should_continue = 0;
+          // break;
         }
      }
 
