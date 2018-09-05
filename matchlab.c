@@ -241,6 +241,8 @@ void flag_b(char* arguments[])
         else if (*currentCharacater >= 48 && *currentCharacater <= 57 && sequence == 0) //This means it's a digit
         {
 
+          printf("The value of sequence: %d\n", sequence );
+
           //We know that the colon character should be done. Check it's truthfulness.
           if (colonCounter != 2)
           {
