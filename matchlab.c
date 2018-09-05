@@ -179,12 +179,14 @@ void flag_b(char* arguments[])
   //Counters
   int letterBCounter         = 0;
   int colonCounter           = 0;
-  char* sequenceX            = "";
+  char* sequenceX            = ""; //NOTE: I don't think this works! need a new data structure
   int sequenceXCounter       = 0;
   int letterQCounter         = 0;
   int equalsCounter          = 0;
   char* sequenceY            = "";
   int upperCaseCount         = 0;
+
+  char str[] = "Geeks";
 
 
   int should_continue        = 1; //1 = true, 0 = false
@@ -314,14 +316,14 @@ void flag_b(char* arguments[])
             //now we can check the sequences
             //iterate through sequence x, but only checking odds
 
-            char* sequenceXCopy = sequenceX;
+            // char* sequenceXCopy = sequenceX;
             char* currentDigit; // first copy the pointer to not change the original
 
             char* newSequenceX = "";
 
             //TODO: FIX THIS!!!!!! How to create a new string with only even indecies?
             int counter = 0;
-            for (currentDigit = sequenceXCopy; *currentDigit != '\0'; currentDigit++)
+            for (currentDigit = sequenceX; *currentDigit != '\0'; currentDigit++)
             {
               if (counter % 2 == 0) //only touch the even ones
               {
