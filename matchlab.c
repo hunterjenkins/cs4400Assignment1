@@ -155,12 +155,12 @@ void flag_a(char* arguments[], int tFlag)
               char* tempPointer = ++pointer;
               if (*tempPointer == '\0')   //This is the last character
               {
+                printf("last character\n" );
                 pointer[0] = *tempPointer;
               }
               else {
                 char temp = pointer[index];
                 pointer[index] = pointer[index+1];
-
 
 
                 printf("%c\n", *pointer);
