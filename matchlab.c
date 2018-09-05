@@ -242,7 +242,14 @@ void flag_b(char* arguments[])
         //update sequence X TODO: verify that this works?
         else if (*currentCharacater >= 48 && *currentCharacater <= 57 && sequence == 0) //This means it's a digit
         {
-
+          //Attempting to stop a seg fault before it happens.
+          if (sequenceXCounter >=3)
+          {
+            printf("no\n");
+            printf("too many digits. Trying to stop seg fault\n");
+            should_continue = 0;
+            break;
+          }
 
           //We know that the colon character should be done. Check it's truthfulness.
           if (colonCounter != 2)
@@ -255,7 +262,6 @@ void flag_b(char* arguments[])
 
           printf("Adding this to sequenceX: %d\n", *currentCharacater);
           sequenceX[sequenceXCounter] = *currentCharacater;
-
           sequenceXCounter++;
 
         }
@@ -303,6 +309,16 @@ void flag_b(char* arguments[])
         }
         else if (*currentCharacater >= 48 && *currentCharacater <= 57 && sequence == 1) //checking sequence y
         {
+
+          //Attempting to stop a seg fault before it happens.
+          if (sequenceYCounter >= 2)
+          {
+            printf("no\n");
+            printf("too many digits. Trying to stop seg fault for 'y'\n");
+            should_continue = 0;
+            break;
+          }
+
           if (equalsCounter!= 1)
           {
             printf("no\n");
@@ -338,7 +354,7 @@ void flag_b(char* arguments[])
             {
               printf("no\n");
               printf("9\n");
-            
+
               should_continue = 0;
               break;
             }
