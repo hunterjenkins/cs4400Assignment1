@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+
 
 
 void flag_a(char* arguments[])
