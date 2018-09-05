@@ -536,7 +536,7 @@ void flag_c(char* arguments[])
         {
 
           //Attempting to stop a seg fault before it happens.
-          if (sequenceYCounter >= 2)
+          if (sequenceYCounter >= 3)
           {
             printf("no\n");
             printf("too many digits. Trying to stop seg fault for 'y'\n");
