@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>       //TODO: we can't have this?!
+#include <string.h>
 
 
 
@@ -20,12 +20,14 @@ void flag_a(char* arguments[], int tFlag)
    for (index = 0; index < sizeof(arguments); index++)
    {
      //stop if there are no more arguments
-     if (arguments[index] == "empty") { break; }
+     if (arguments[index] == "empty") { break;}
 
      //This should grab the current 'string' and place it into an array of characters?
      char* currentArgument = arguments[index];
 
      char* currentCharacater; // first copy the pointer to not change the original
+
+     char newArgument[50] = {0}; //we can pick a large number because we know it can't exceed these.
 
     //check if first character is not b
     if (*currentArgument != 'b')
@@ -143,6 +145,14 @@ void flag_a(char* arguments[], int tFlag)
           }
           else {
             printf("Current arg: %s\n", currentArgument);
+
+            char* pointer = currentArgument;
+
+            while (pointer != 0)
+            {
+              printf("%s\n", pointer);
+              pointer++;
+            }
           }
 
         }
