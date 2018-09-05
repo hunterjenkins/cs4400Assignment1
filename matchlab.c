@@ -199,7 +199,6 @@ void flag_b(char* arguments[])
     //stop if there are no more arguments
     if (arguments[index] == "empty") { break; }
 
-    //This should grab the current 'string' and place it into an array of characters?
     char* currentArgument = arguments[index];
 
     char* currentCharacater; // first copy the pointer to not change the original
@@ -315,13 +314,13 @@ void flag_b(char* arguments[])
             //now we can check the sequences
             //iterate through sequence x, but only checking odds
 
-            char* sequenceXCopy = sequenceX;
+            // char* sequenceXCopy = sequenceX;
             char* currentDigit; // first copy the pointer to not change the original
 
             char* newSequenceX = "";
 
             int counter = 0;
-            for (currentDigit = sequenceXCopy; *currentDigit != '\0'; currentDigit++)
+            for (currentDigit = sequenceX; *currentDigit != '\0'; currentDigit++)
             {
               if (counter % 2 == 0) //only touch the even ones
               {
