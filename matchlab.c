@@ -238,7 +238,7 @@ void flag_b(char* arguments[])
           colonCounter++;
         }
         //update sequence X TODO: verify that this works?
-        else if (*currentCharacater <= 48 && *currentCharacater >= 57 && sequence == 0) //This means it's a digit
+        else if (*currentCharacater >= 48 && *currentCharacater <= 57 && sequence == 0) //This means it's a digit
         {
 
           //We know that the colon character should be done. Check it's truthfulness.
@@ -295,7 +295,7 @@ void flag_b(char* arguments[])
 
           equalsCounter++;
         }
-        else if (*currentCharacater <= 48 && *currentCharacater >= 57 && sequence == 1) //checking sequence y
+        else if (*currentCharacater >= 48 && *currentCharacater <= 57 && sequence == 1) //checking sequence y
         {
           if (equalsCounter!= 1)
           {
