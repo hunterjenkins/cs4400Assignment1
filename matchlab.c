@@ -241,7 +241,6 @@ void flag_b(char* arguments[])
         else if (*currentCharacater >= 48 && *currentCharacater <= 57 && sequence == 0) //This means it's a digit
         {
 
-          printf("The value of sequence: %d\n", sequence );
 
           //We know that the colon character should be done. Check it's truthfulness.
           if (colonCounter != 2)
@@ -258,7 +257,6 @@ void flag_b(char* arguments[])
         }
         else if (*currentCharacater == 'q')
         {
-          printf("resetting sequence!\n");
           sequence = 1;
 
           if (sequenceXCounter > 3)
@@ -328,6 +326,7 @@ void flag_b(char* arguments[])
               if (counter % 2 == 0) //only touch the even ones
               {
                 newSequenceX += *currentDigit;
+                printf("adding to newSequenceX: %d\n",*currentDigit );
               }
               counter++;
             }
@@ -336,7 +335,6 @@ void flag_b(char* arguments[])
             //then, we compare
             if (strcmp(newSequenceX,sequenceY) != 0) //if they're not a match
             {
-
               printf("no\n");
               printf("9\n");
               should_continue = 0;
