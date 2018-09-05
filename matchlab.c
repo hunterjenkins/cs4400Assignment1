@@ -310,11 +310,11 @@ for (index = 0; index < sizeof(arguments); index++)
           //iterate through sequence x, but only checking odds
 
           char* sequenceXCopy = sequenceX;
-          char* currentDigit_x; // first copy the pointer to not change the original
+          char* currentDigit; // first copy the pointer to not change the original
 
           char* newSequenceX = "";
 
-          for (currentDigit_x = sequenceXCopy; *currentDigit_x != '\0'; currentCharacater++)
+          for (currentDigit = sequenceXCopy; *currentDigit != '\0'; currentCharacater++)
           {
             if (currentDigit % 2 == 0) //only touch the even ones
             {
@@ -358,12 +358,12 @@ for (index = 0; index < sizeof(arguments); index++)
      else {
        printf("yes\n");
 
-       printf("stats:\n");
-       printf("letterBRepCounter %d\n", letterBRepCounter);
-       printf("underscoreCounter %d\n", underscoreCounter);
-       printf("letterTCounter %d\n", letterTCounter);
-       printf("characterEqualsCounter %d\n", characterEqualsCounter);
-       printf("upperCaseCount %d\n", upperCaseCount);
+       // printf("stats:\n");
+       // printf("letterBRepCounter %d\n", letterBRepCounter);
+       // printf("underscoreCounter %d\n", underscoreCounter);
+       // printf("letterTCounter %d\n", letterTCounter);
+       // printf("characterEqualsCounter %d\n", characterEqualsCounter);
+       // printf("upperCaseCount %d\n", upperCaseCount);
      }
    }
  }
