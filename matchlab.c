@@ -314,12 +314,14 @@ for (index = 0; index < sizeof(arguments); index++)
 
           char* newSequenceX = "";
 
+          int counter = 0;
           for (currentDigit = sequenceXCopy; *currentDigit != '\0'; currentCharacater++)
           {
-            if (currentDigit % 2 == 0) //only touch the even ones
+            if (counter % 2 == 0) //only touch the even ones
             {
-              newSequenceX += *currentDigit_x;
+              newSequenceX += *currentDigit;
             }
+            counter++;
           }
 
 
