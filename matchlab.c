@@ -162,219 +162,215 @@ void flag_a(char* arguments[])
 
 void flag_b(char* arguments[])
 {
-/*
--b Criteria:
-  -any even number (including zero) repetitions of the letter “b”;
-  -exactly two “:”s;
-  -between 1 and 3 (inclusive) decimal digits — call this sequence X;
-  -between 3 and 7 repetitions (inclusive) of the letter “q”;
-  -exactly one “=”;
-  -the same characters as the even-positioned characters in X; and
-  -an odd number of uppercase letters.
-*/
+  /*
+  -b Criteria:
+    -any even number (including zero) repetitions of the letter “b”;
+    -exactly two “:”s;
+    -between 1 and 3 (inclusive) decimal digits — call this sequence X;
+    -between 3 and 7 repetitions (inclusive) of the letter “q”;
+    -exactly one “=”;
+    -the same characters as the even-positioned characters in X; and
+    -an odd number of uppercase letters.
+  */
 
-//This will be used to track if we are on sequence x or sequence y.
-int sequence = 0;
+  //This will be used to track if we are on sequence x or sequence y.
+  int sequence = 0;
 
-//Counters
-int letterBCounter         = 0;
-int colonCounter           = 0;
-char* sequenceX            = "";
-int sequenceXCounter       = 0;
-int letterQCounter         = 0;
-int equalsCounter          = 0;
-char* sequenceY            = "";
-int upperCaseCount         = 0;
-
-
-int should_continue        = 1; //1 = true, 0 = false
+  //Counters
+  int letterBCounter         = 0;
+  int colonCounter           = 0;
+  char* sequenceX            = "";
+  int sequenceXCounter       = 0;
+  int letterQCounter         = 0;
+  int equalsCounter          = 0;
+  char* sequenceY            = "";
+  int upperCaseCount         = 0;
 
 
-//Handle each argument individually
-int index;
-for (index = 0; index < sizeof(arguments); index++)
-{
-  //stop if there are no more arguments
-  if (arguments[index] == "empty") { break; }
+  int should_continue        = 1; //1 = true, 0 = false
 
-  //This should grab the current 'string' and place it into an array of characters?
-  char* currentArgument = arguments[index];
 
-  char* currentCharacater; // first copy the pointer to not change the original
+  //Handle each argument individually
+  int index;
+  for (index = 0; index < sizeof(arguments); index++)
+  {
+    //stop if there are no more arguments
+    if (arguments[index] == "empty") { break; }
 
- //check if first character is not b
- if (*currentArgument != 'b')
- {
-   printf("no\n");
-   printf("initial check\n" );
- }
- else
- {
-   //iterate through each character in order to check the Criteria.
-   //Update: as we are iterating, we will be checking the previous character. This
-   //will allow us to maintain the order of events.
-   for (currentCharacater = currentArgument; *currentCharacater != '\0'; currentCharacater++)
+    //This should grab the current 'string' and place it into an array of characters?
+    char* currentArgument = arguments[index];
+
+    char* currentCharacater; // first copy the pointer to not change the original
+
+   //check if first character is not b
+   if (*currentArgument != 'b')
    {
+     printf("no\n");
+     printf("initial check\n" );
+   }
+   else
+   {
+     //iterate through each character in order to check the Criteria.
+     //Update: as we are iterating, we will be checking the previous character. This
+     //will allow us to maintain the order of events.
+     for (currentCharacater = currentArgument; *currentCharacater != '\0'; currentCharacater++)
+     {
 
-      //Update the letterBCounter
-      if (*currentCharacater == 'b')
-      {
-        letterBCounter++;
-      }
-      //Update the colon character
-      else if (*currentCharacater == ':')
-      {
-
-        //we know that b should be done at this point. Check it's truthfulness.
-        if (letterBCounter%2 != 0) //If odd
+        //Update the letterBCounter
+        if (*currentCharacater == 'b')
         {
-          printf("no\n");
-          printf("1\n");
-          should_continue = 0;
-          break;
+          letterBCounter++;
         }
-
-        colonCounter++;
-      }
-      //update sequence X TODO: verify that this works?
-      else if (*currentCharacater <= 0 && *currentCharacater >= 9 && sequence == 0) //This means it's a digit
-      {
-
-        //We know that the colon character should be done. Check it's truthfulness.
-        if (colonCounter != 0)
+        //Update the colon character
+        else if (*currentCharacater == ':')
         {
-          printf("no\n");
-          printf("2\n");
-          should_continue = 0;
-          break;
-        }
 
-        sequenceXCounter++;
-        sequenceX += *currentCharacater; //TODO: verify This works
-      }
-      else if (*currentCharacater == 'q')
-      {
-        sequence = 1;
-
-        if (sequenceXCounter > 3)
-        {
-          printf("no\n");
-          printf("3\n");
-          should_continue = 0;
-          break;
-        }
-        else if (sequenceXCounter < 1)
-        {
-          printf("no\n");
-          printf("4\n");
-          should_continue = 0;
-          break;
-        }
-
-        letterQCounter++;
-      }
-      else if (*currentCharacater == '=')
-      {
-
-        //check equals
-        if (letterQCounter > 7)
-        {
-          printf("no\n");
-          printf("6\n");
-          should_continue = 0;
-          break;
-        }
-        else if (letterQCounter < 3)
-        {
-          printf("no\n");
-          printf("7\n");
-          should_continue = 0;
-          break;
-        }
-
-        equalsCounter++;
-      }
-      else if (*currentCharacater <= 0 && *currentCharacater >= 9 && sequence == 1) //checking sequence y
-      {
-        if (equalsCounter!= 1)
-        {
-          printf("no\n");
-          printf("8\n");
-          should_continue = 0;
-          break;
-        }
-
-        sequenceY += *currentCharacater;
-      }
-      else if (*currentCharacater >= 65 && *currentCharacater <= 90) //uppercase
-      {
-          //now we can check the sequences
-          //iterate through sequence x, but only checking odds
-
-          char* sequenceXCopy = sequenceX;
-          char* currentDigit; // first copy the pointer to not change the original
-
-          char* newSequenceX = "";
-
-          int counter = 0;
-          for (currentDigit = sequenceXCopy; *currentDigit != '\0'; currentCharacater++)
-          {
-            if (counter % 2 == 0) //only touch the even ones
-            {
-              newSequenceX += *currentDigit;
-            }
-            counter++;
-          }
-
-
-          //then, we compare
-          if (strcmp(newSequenceX,sequenceY) != 0) //if they're not a match
+          //we know that b should be done at this point. Check it's truthfulness.
+          if (letterBCounter%2 != 0) //If odd
           {
             printf("no\n");
-            printf("9\n");
+            printf("1\n");
             should_continue = 0;
             break;
           }
-          upperCaseCount++;
-      }
-      else
-      {
-        //this means a bad character was in the string
-        printf("no\n");
-        printf("Bad character\n");
-        should_continue = 0;
-        break;
-      }
-   }
+
+          colonCounter++;
+        }
+        //update sequence X TODO: verify that this works?
+        else if (*currentCharacater <= 0 && *currentCharacater >= 9 && sequence == 0) //This means it's a digit
+        {
+
+          //We know that the colon character should be done. Check it's truthfulness.
+          if (colonCounter != 0)
+          {
+            printf("no\n");
+            printf("2\n");
+            should_continue = 0;
+            break;
+          }
+
+          sequenceXCounter++;
+          sequenceX += *currentCharacater; //TODO: verify This works
+        }
+        else if (*currentCharacater == 'q')
+        {
+          sequence = 1;
+
+          if (sequenceXCounter > 3)
+          {
+            printf("no\n");
+            printf("3\n");
+            should_continue = 0;
+            break;
+          }
+          else if (sequenceXCounter < 1)
+          {
+            printf("no\n");
+            printf("4\n");
+            should_continue = 0;
+            break;
+          }
+
+          letterQCounter++;
+        }
+        else if (*currentCharacater == '=')
+        {
+
+          //check equals
+          if (letterQCounter > 7)
+          {
+            printf("no\n");
+            printf("6\n");
+            should_continue = 0;
+            break;
+          }
+          else if (letterQCounter < 3)
+          {
+            printf("no\n");
+            printf("7\n");
+            should_continue = 0;
+            break;
+          }
+
+          equalsCounter++;
+        }
+        else if (*currentCharacater <= 0 && *currentCharacater >= 9 && sequence == 1) //checking sequence y
+        {
+          if (equalsCounter!= 1)
+          {
+            printf("no\n");
+            printf("8\n");
+            should_continue = 0;
+            break;
+          }
+
+          sequenceY += *currentCharacater;
+        }
+        else if (*currentCharacater >= 65 && *currentCharacater <= 90) //uppercase
+        {
+            //now we can check the sequences
+            //iterate through sequence x, but only checking odds
+
+            char* sequenceXCopy = sequenceX;
+            char* currentDigit; // first copy the pointer to not change the original
+
+            char* newSequenceX = "";
+
+            int counter = 0;
+            for (currentDigit = sequenceXCopy; *currentDigit != '\0'; currentCharacater++)
+            {
+              if (counter % 2 == 0) //only touch the even ones
+              {
+                newSequenceX += *currentDigit;
+              }
+              counter++;
+            }
 
 
-   if (should_continue != 0)
-   {
-     if (upperCaseCount%2 == 0) //If even
-     {
-       printf("no\n");
-       printf("7\n");
+            //then, we compare
+            if (strcmp(newSequenceX,sequenceY) != 0) //if they're not a match
+            {
+              printf("no\n");
+              printf("9\n");
+              should_continue = 0;
+              break;
+            }
+            upperCaseCount++;
+        }
+        else
+        {
+          //this means a bad character was in the string
+          printf("no\n");
+          printf("Bad character\n");
+          should_continue = 0;
+          break;
+        }
      }
-     //Since it has passed all of these tests, we know it's matching so we
-     //print yes!
-     else
-     {
-       printf("yes\n");
 
-       // printf("stats:\n");
-       // printf("letterBRepCounter %d\n", letterBRepCounter);
-       // printf("underscoreCounter %d\n", underscoreCounter);
-       // printf("letterTCounter %d\n", letterTCounter);
-       // printf("characterEqualsCounter %d\n", characterEqualsCounter);
-       // printf("upperCaseCount %d\n", upperCaseCount);
+
+     if (should_continue != 0)
+     {
+       if (upperCaseCount%2 == 0) //If even
+       {
+         printf("no\n");
+         printf("7\n");
+       }
+       //Since it has passed all of these tests, we know it's matching so we
+       //print yes!
+       else
+       {
+         printf("yes\n");
+
+         // printf("stats:\n");
+         // printf("letterBRepCounter %d\n", letterBRepCounter);
+         // printf("underscoreCounter %d\n", underscoreCounter);
+         // printf("letterTCounter %d\n", letterTCounter);
+         // printf("characterEqualsCounter %d\n", characterEqualsCounter);
+         // printf("upperCaseCount %d\n", upperCaseCount);
+       }
      }
    }
   }
-}
-
-
-
-
    printf("Flag B: \n");
 }
 
