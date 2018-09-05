@@ -559,33 +559,16 @@ void flag_c(char* arguments[])
         else if (*currentCharacater >= 65 && *currentCharacater <= 90) //uppercase
         {
             //now we can check the sequences
-            //iterate through sequence x, but only checking odds
-
-
-            if (sequenceX[0] != '\0')
-            {
-              newSequenceX[0] = sequenceX[0];
-            }
-            if (sequenceX[1] != '\0')
-            {
-              newSequenceX[1] = sequenceX[1];
-            }
-            if (sequenceX[2] != '\0')
-            {
-              newSequenceX[2] = sequenceX[2];
-            }
-
-
 
             //then, we compare
-            if (newSequenceX[0] != sequenceY[2]) //if they're not a match
+            if (sequenceX[0] != sequenceY[2]) //if they're not a match
             {
               printf("no\n");
               printf("9\n");
               should_continue = 0;
               break;
             }
-            if (newSequenceX[1] != sequenceY[1]) //if they're not a match
+            if (sequenceX[1] != sequenceY[1]) //if they're not a match
             {
               printf("no\n");
               printf("10\n");
@@ -593,10 +576,10 @@ void flag_c(char* arguments[])
               should_continue = 0;
               break;
             }
-            if (newSequenceX[2] != sequenceY[1]) //if they're not a match
+            if (sequenceX[2] != sequenceY[1]) //if they're not a match
             {
               printf("no\n");
-              printf("10\n");
+              printf("11\n");
 
               should_continue = 0;
               break;
