@@ -208,7 +208,8 @@ for (index = 0; index < sizeof(arguments); index++)
    printf("no\n");
    printf("initial check\n" );
  }
- else {
+ else
+ {
    //iterate through each character in order to check the Criteria.
    //Update: as we are iterating, we will be checking the previous character. This
    //will allow us to maintain the order of events.
@@ -272,7 +273,8 @@ for (index = 0; index < sizeof(arguments); index++)
 
         letterQCounter++;
       }
-      else if (*currentCharacater == '=') { //ASCII chart
+      else if (*currentCharacater == '=')
+      {
 
         //check equals
         if (letterQCounter > 7)
@@ -333,12 +335,10 @@ for (index = 0; index < sizeof(arguments); index++)
             should_continue = 0;
             break;
           }
-
-
           upperCaseCount++;
-
       }
-      else {
+      else
+      {
         //this means a bad character was in the string
         printf("no\n");
         printf("Bad character\n");
@@ -357,7 +357,8 @@ for (index = 0; index < sizeof(arguments); index++)
      }
      //Since it has passed all of these tests, we know it's matching so we
      //print yes!
-     else {
+     else
+     {
        printf("yes\n");
 
        // printf("stats:\n");
@@ -368,7 +369,8 @@ for (index = 0; index < sizeof(arguments); index++)
        // printf("upperCaseCount %d\n", upperCaseCount);
      }
    }
- }
+  }
+}
 
 
 
