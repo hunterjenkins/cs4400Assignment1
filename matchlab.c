@@ -332,7 +332,7 @@ void flag_b(char* arguments[])
             if (strcmp(newSequenceX,sequenceY) != 0) //if they're not a match
             {
               printf("X:%s\n",newSequenceX);
-              printf("Y:%s\n" sequenceY);
+              printf("Y:%s\n", sequenceY);
               printf("no\n");
               printf("9\n");
               should_continue = 0;
