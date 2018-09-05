@@ -560,30 +560,61 @@ void flag_c(char* arguments[])
         {
             //now we can check the sequences
 
-            //then, we compare
-            if (sequenceX[0] != sequenceY[2]) //if they're not a match
+            if (sequenceXCounter == 3)
             {
-              printf("no\n");
-              printf("9\n");
-              should_continue = 0;
-              break;
-            }
-            if (sequenceX[1] != sequenceY[1]) //if they're not a match
-            {
-              printf("no\n");
-              printf("10\n");
+              //then, we compare
+              if (sequenceX[0] != sequenceY[2]) //if they're not a match
+              {
+                printf("no\n");
+                printf("9\n");
+                should_continue = 0;
+                break;
+              }
+              if (sequenceX[1] != sequenceY[1]) //if they're not a match
+              {
+                printf("no\n");
+                printf("10\n");
 
-              should_continue = 0;
-              break;
-            }
-            if (sequenceX[2] != sequenceY[0]) //if they're not a match
-            {
-              printf("no\n");
-              printf("11\n");
+                should_continue = 0;
+                break;
+              }
+              if (sequenceX[2] != sequenceY[0]) //if they're not a match
+              {
+                printf("no\n");
+                printf("11\n");
 
-              should_continue = 0;
-              break;
+                should_continue = 0;
+                break;
+              }
             }
+            else if (sequenceXCounter == 2)
+            {
+              if (sequenceX[0] != sequenceY[1]) //if they're not a match
+              {
+                printf("no\n");
+                printf("12\n");
+                should_continue = 0;
+                break;
+              }
+              if (sequenceX[1] != sequenceY[0]) //if they're not a match
+              {
+                printf("no\n");
+                printf("13\n");
+                should_continue = 0;
+                break;
+              }
+            }
+            else if (sequenceXCounter == 1)
+            {
+              if (sequenceX[0] != sequenceY[0]) //if they're not a match
+              {
+                printf("no\n");
+                printf("14\n");
+                should_continue = 0;
+                break;
+              }
+            }
+
 
             upperCaseCount++;
         }
