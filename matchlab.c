@@ -215,6 +215,8 @@ void flag_b(char* arguments[])
      //will allow us to maintain the order of events.
      for (currentCharacater = currentArgument; *currentCharacater != '\0'; currentCharacater++)
      {
+       printf("current character %p\n", *currentCharacater);
+
 
         //Update the letterBCounter
         if (*currentCharacater == 'b')
@@ -341,7 +343,7 @@ void flag_b(char* arguments[])
         {
           //this means a bad character was in the string
           printf("no\n");
-          printf("Bad character%s\n", *currentCharacater);
+          // printf("Bad character%s\n", *currentCharacater);
           should_continue = 0;
           break;
         }
