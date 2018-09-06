@@ -135,7 +135,8 @@ void flag_a(char* arguments[], int tFlag)
            //check equals
            if (characterEqualsCounter != 2)
            {
-             if (tFlag == 0){
+             if (tFlag == 0)
+             {
                printf("no\n");
                printf("6\n");
              }
@@ -164,7 +165,7 @@ void flag_a(char* arguments[], int tFlag)
       {
         if (upperCaseCount%2 == 0) //If even
         {
-          if (tflag == 0)
+          if (tFlag == 0)
           {
             printf("no\n");
             printf("7\n");
