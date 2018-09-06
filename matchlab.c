@@ -5,20 +5,23 @@
 
 void flag_a(char* arguments[], int tFlag)
 {
-   //Counters
-   int letterBRepCounter      = 0;
-   int underscoreCounter      = 0;
-   int letterTCounter         = 0;
-   int characterEqualsCounter = 0;
-   int upperCaseCount         = 0;
-
-   int should_continue        = 1; //1 = true, 0 = false
 
 
    //Handle each argument individually
    int index;
    for (index = 0; index < sizeof(arguments); index++)
    {
+
+     //Counters
+     int letterBRepCounter      = 0;
+     int underscoreCounter      = 0;
+     int letterTCounter         = 0;
+     int characterEqualsCounter = 0;
+     int upperCaseCount         = 0;
+
+     int should_continue        = 1; //1 = true, 0 = false
+
+
      //stop if there are no more arguments
      if (arguments[index] == "empty") { break;}
 
@@ -217,29 +220,29 @@ void flag_b(char* arguments[], int tFlag)
     -an odd number of uppercase letters.
   */
 
-  //This will be used to track if we are on sequence x or sequence y.
-  int sequence = 0;
 
-  //Counters
-  int letterBCounter         = 0;
-  int colonCounter           = 0;
-  char sequenceX[3]          = {0};  //3 because it can't be any bigger than this!
-  int sequenceXCounter       = 0;
-  int letterQCounter         = 0;
-  int equalsCounter          = 0;
-  char sequenceY[2]          = {0}; //2 because it can't be any bigger than this! 9
-  int sequenceYCounter       = 0;
-  int upperCaseCount         = 0;
-  char newSequenceX[2]       = {0};
-
-  int should_continue        = 1; //1 = true, 0 = false
 
 
   //Handle each argument individually
   int index;
   for (index = 0; index < sizeof(arguments); index++)
   {
+    //This will be used to track if we are on sequence x or sequence y.
+    int sequence = 0;
 
+    //Counters
+    int letterBCounter         = 0;
+    int colonCounter           = 0;
+    char sequenceX[3]          = {0};  //3 because it can't be any bigger than this!
+    int sequenceXCounter       = 0;
+    int letterQCounter         = 0;
+    int equalsCounter          = 0;
+    char sequenceY[2]          = {0}; //2 because it can't be any bigger than this! 9
+    int sequenceYCounter       = 0;
+    int upperCaseCount         = 0;
+    char newSequenceX[2]       = {0};
+
+    int should_continue        = 1; //1 = true, 0 = false
 
     //stop if there are no more arguments
     if (arguments[index] == "empty") { break; }
@@ -528,27 +531,7 @@ void flag_c(char* arguments[], int tFlag)
 {
 
 
-  //This will be used to track if we are on sequence x or sequence y.
-  int sequence = 0;
 
-  //Counters
-  int letterDCounter         = 0;
-  int equalsCounter          = 0;
-
-  char sequenceX[3]          = {0};  //3 because it can't be any bigger than this!
-  int sequenceXCounter       = 0;
-
-  int letterUCounter         = 0;
-
-  int underscoreCounter      = 0;
-  char sequenceY[3]          = {0}; //2 because it can't be any bigger than this! 9
-  int sequenceYCounter       = 0;
-
-  int upperCaseCount         = 0;
-
-  char newSequenceX[3]       = {0};
-
-  int should_continue        = 1; //1 = true, 0 = false
 
 
   //Handle each argument individually
@@ -556,6 +539,27 @@ void flag_c(char* arguments[], int tFlag)
   for (index = 0; index < sizeof(arguments); index++)
   {
 
+    //This will be used to track if we are on sequence x or sequence y.
+    int sequence = 0;
+
+    //Counters
+    int letterDCounter         = 0;
+    int equalsCounter          = 0;
+
+    char sequenceX[3]          = {0};  //3 because it can't be any bigger than this!
+    int sequenceXCounter       = 0;
+
+    int letterUCounter         = 0;
+
+    int underscoreCounter      = 0;
+    char sequenceY[3]          = {0}; //2 because it can't be any bigger than this! 9
+    int sequenceYCounter       = 0;
+
+    int upperCaseCount         = 0;
+
+    char newSequenceX[3]       = {0};
+
+    int should_continue        = 1; //1 = true, 0 = false
 
     //stop if there are no more arguments
     if (arguments[index] == "empty") { break; }
