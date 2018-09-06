@@ -1,11 +1,10 @@
+//Hunter Jenkins - u0905670
+
 #include <stdio.h>
 #include <string.h>
 
-//Hunter Jenkins
-
 void flag_a(char* arguments[], int tFlag)
 {
-
 
    //Handle each argument individually
    int index;
@@ -28,8 +27,6 @@ void flag_a(char* arguments[], int tFlag)
 
      //This should grab the current 'string' and place it into an array of characters?
      char* currentArgument = arguments[index];
-
-     printf("current argument %s\n", currentArgument );
 
      char* currentCharacater; // first copy the pointer to not change the original
 
