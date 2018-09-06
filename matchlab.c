@@ -144,7 +144,6 @@ void flag_a(char* arguments[], int tFlag)
             printf("yes\n");
           }
           else {
-            printf("Current arg: %s\n", currentArgument);
 
             char* pointer = currentArgument;
 	    int sizeOfString = 0;
@@ -156,14 +155,14 @@ void flag_a(char* arguments[], int tFlag)
             }
 
 	    char* newPointer = currentArgument;
-	    char last = newPointer[sizeOfString-1];
+	    char first = newPointer[0];
 
 	    int index; //Start on last index
-	    for (index = sizeOfString-1; index > 0; index--)
+	    for (index = 0; index < sizeOfString-1; index++)
 	    {
-	      newPointer[index] = newPointer[index-1];
+	      newPointer[index] = newPointer[index+1];
 	    }
-	    newPointer[0] = last;
+	    newPointer[sizeOfString-1] = first;
 
 	    printf("%s\n", newPointer);
 
@@ -705,7 +704,55 @@ void flag_c(char* arguments[], int tFlag)
        //print yes!
        else
        {
-         printf("yes\n");
+	 if (tFlag == 0)
+	 {
+	   printf("yes\n");
+	 }
+	 else 
+	 {
+	   //Do the conversion
+	   char*pointer = currentArgument; 
+	   int sizeOfString = 0;
+	   int letterCounter = 0; //A + E;
+
+	   //Gather the size of the array with how many A's and E's there are. 
+	   while (*pointer != '\0')
+	   {
+	     if (*pointer == 'A' || *pointer == 'E')
+	     {
+	       letterCounter++;
+	     }
+	     sizeOfString++;
+	     pointer++;
+	   }
+
+	   char * newPointer = currentArgument;
+	   int size = sizeOfString - letterCounter;
+	   char arrayString[size];
+	   memset(arrayString, 0, sizeOfString-letterCounter);
+
+
+	   int index;
+	   int arrayStringIndex = 0;
+	   for (index = 0; index < sizeOfString; index++)
+	   {
+	     if (*newPointer == 'A' || *newPointer == 'E')
+	     {
+	       //Do nothing
+	     }
+	     else 
+	     {
+	       arrayString[arrayStringIndex] = *newPointer;
+	       arrayStringIndex++;
+	     }
+	     newPointer++;
+	   }
+	   printf("%s\n", arrayString);
+
+
+
+	 }
+        
        }
      }
    }
