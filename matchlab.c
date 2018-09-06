@@ -1,4 +1,4 @@
-//Hunter Jenkins - u0905670
+//Hunter Jenkins - u0905670 -
 
 #include <stdio.h>
 #include <string.h>
