@@ -22,8 +22,11 @@ void flag_a(char* arguments[], int tFlag)
      //stop if there are no more arguments
      if (arguments[index] == "empty") { break;}
 
+
      //This should grab the current 'string' and place it into an array of characters?
      char* currentArgument = arguments[index];
+
+     printf("current argument %s\n", currentArgument );
 
      char* currentCharacater; // first copy the pointer to not change the original
 
