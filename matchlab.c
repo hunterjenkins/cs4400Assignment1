@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-
+//Hunter Jenkins
 
 void flag_a(char* arguments[], int tFlag)
 {
@@ -147,11 +147,11 @@ void flag_a(char* arguments[], int tFlag)
 
             char* pointer = currentArgument;
 	    int sizeOfString = 0;
-	    
+
             while (*pointer != '\0')
             {
 	      sizeOfString++;
-               pointer++;	       
+               pointer++;
             }
 
 	    char* newPointer = currentArgument;
@@ -408,14 +408,14 @@ void flag_b(char* arguments[], int tFlag)
 	 {
 	   printf("yes\n");
 	 }
-	 else 
+	 else
 	 {
 	   //Do the conversion
-	   char*pointer = currentArgument; 
+	   char*pointer = currentArgument;
 	   int sizeOfString = 0;
 	   int Acounter = 0;
 
-	   //Gather the size of the array with how many A's there are. 
+	   //Gather the size of the array with how many A's there are.
 	   while (*pointer != '\0')
 	   {
 	     if (*pointer == 'A')
@@ -436,14 +436,14 @@ void flag_b(char* arguments[], int tFlag)
 	   int arrayStringIndex = 0;
 	   for (index = 0; index < sizeOfString; index++)
 	   {
-	     
+
 	     if (*newPointer == 'A')
 	     {
 	       arrayString[arrayStringIndex] = 'F';
 	       arrayStringIndex++;
 	       arrayString[arrayStringIndex] = 'A';
 	     }
-	     else 
+	     else
 	     {
 	       arrayString[arrayStringIndex] = *newPointer;
 	     }
@@ -453,7 +453,7 @@ void flag_b(char* arguments[], int tFlag)
 	   printf("%s\n", arrayString);
 
 	 }
-         
+
        }
      }
    }
@@ -708,14 +708,14 @@ void flag_c(char* arguments[], int tFlag)
 	 {
 	   printf("yes\n");
 	 }
-	 else 
+	 else
 	 {
 	   //Do the conversion
-	   char*pointer = currentArgument; 
+	   char*pointer = currentArgument;
 	   int sizeOfString = 0;
 	   int letterCounter = 0; //A + E;
 
-	   //Gather the size of the array with how many A's and E's there are. 
+	   //Gather the size of the array with how many A's and E's there are.
 	   while (*pointer != '\0')
 	   {
 	     if (*pointer == 'A' || *pointer == 'E')
@@ -740,7 +740,7 @@ void flag_c(char* arguments[], int tFlag)
 	     {
 	       //Do nothing
 	     }
-	     else 
+	     else
 	     {
 	       arrayString[arrayStringIndex] = *newPointer;
 	       arrayStringIndex++;
@@ -752,7 +752,7 @@ void flag_c(char* arguments[], int tFlag)
 
 
 	 }
-        
+
        }
      }
    }
