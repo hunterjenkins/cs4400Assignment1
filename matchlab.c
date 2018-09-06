@@ -614,7 +614,6 @@ void flag_c(char* arguments[], int tFlag)
           if (equalsCounter != 1)
           {
             printf("no\n");
-            printf("2\n");
             should_continue = 0;
             continue;
           }
