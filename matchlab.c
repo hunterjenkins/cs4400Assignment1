@@ -32,8 +32,12 @@ void flag_a(char* arguments[], int tFlag)
     //check if first character is not b
     if (*currentArgument != 'b')
     {
-      printf("no\n");
-      printf("initial check\n" );
+      if (tFlag == 0)
+      {
+        printf("no\n");
+        printf("initial check\n" );
+      }
+
     }
     else {
       //iterate through each character in order to check the Criteria.
@@ -54,8 +58,12 @@ void flag_a(char* arguments[], int tFlag)
            //we know that b should be done at this point. Check it's truthfulness.
            if (letterBRepCounter%2 == 0) //If even
            {
-             printf("no\n");
-             printf("1\n");
+             if (tFlag == 0)
+             {
+               printf("no\n");
+               printf("1\n");
+             }
+
              should_continue = 0;
              break;
            }
@@ -69,15 +77,23 @@ void flag_a(char* arguments[], int tFlag)
            //We know that _ should be done. Check it's truthfulness.
            if (underscoreCounter == 0)
            {
-             printf("no\n");
-             printf("2\n");
+             if (tFlag == 0)
+             {
+               printf("no\n");
+               printf("2\n");
+             }
+
              should_continue = 0;
              break;
            }
            else if (underscoreCounter > 1)
            {
-              printf("no\n");
-              printf("3\n");
+             if (tFlag == 0)
+             {
+               printf("no\n");
+               printf("3\n");
+             }
+
               should_continue = 0;
               break;
            }
@@ -90,15 +106,23 @@ void flag_a(char* arguments[], int tFlag)
            //Check t.
            if (letterTCounter > 7)
            {
-             printf("no\n");
-             printf("4\n");
+             if (tFlag == 0)
+             {
+               printf("no\n");
+               printf("4\n");
+             }
+
              should_continue = 0;
              break;
            }
            else if (letterTCounter < 3)
            {
-             printf("no\n");
-             printf("5\n");
+             if (tFlag == 0)
+             {
+               printf("no\n");
+               printf("5\n");
+             }
+
              should_continue = 0;
              break;
            }
@@ -111,8 +135,11 @@ void flag_a(char* arguments[], int tFlag)
            //check equals
            if (characterEqualsCounter != 2)
            {
-             printf("no\n");
-             printf("6\n");
+             if (tFlag == 0){
+               printf("no\n");
+               printf("6\n");
+             }
+
              should_continue = 0;
              break;
            }
@@ -121,8 +148,12 @@ void flag_a(char* arguments[], int tFlag)
          }
          else {
            //this means a bad character was in the string
-           printf("no\n");
-           printf("Bad character\n");
+           if (tFlag == 0)
+           {
+             printf("no\n");
+             printf("Bad character\n");
+           }
+
            should_continue = 0;
            break;
          }
@@ -133,8 +164,12 @@ void flag_a(char* arguments[], int tFlag)
       {
         if (upperCaseCount%2 == 0) //If even
         {
-          printf("no\n");
-          printf("7\n");
+          if (tflag == 0)
+          {
+            printf("no\n");
+            printf("7\n");
+          }
+
         }
         //Since it has passed all of these tests, we know it's matching so we
         //print yes!
@@ -222,8 +257,12 @@ void flag_b(char* arguments[], int tFlag)
    //check if first character is not b
    if (*currentArgument != 'b')
    {
-     printf("no\n");
-     printf("initial check\n" );
+     if (tFlag == 0)
+     {
+       printf("no\n");
+       printf("initial check\n" );
+     }
+
    }
    else
    {
@@ -244,8 +283,12 @@ void flag_b(char* arguments[], int tFlag)
           //we know that b should be done at this point. Check it's truthfulness.
           if (letterBCounter%2 != 0) //If odd
           {
-            printf("no\n");
-            printf("1\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("1\n");
+            }
+
             should_continue = 0;
             break;
           }
@@ -257,8 +300,12 @@ void flag_b(char* arguments[], int tFlag)
           //Attempting to stop a seg fault before it happens.
           if (sequenceXCounter >=3)
           {
-            printf("no\n");
-            printf("too many digits. Trying to stop seg fault\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("too many digits. Trying to stop seg fault\n");
+            }
+
             should_continue = 0;
             break;
           }
@@ -266,13 +313,16 @@ void flag_b(char* arguments[], int tFlag)
           //We know that the colon character should be done. Check it's truthfulness.
           if (colonCounter != 2)
           {
-            printf("no\n");
-            printf("2\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("2\n");
+            }
+
             should_continue = 0;
             break;
           }
 
-          printf("Adding this to sequenceX: %d\n", *currentCharacater);
           sequenceX[sequenceXCounter] = *currentCharacater;
           sequenceXCounter++;
 
@@ -283,15 +333,23 @@ void flag_b(char* arguments[], int tFlag)
 
           if (sequenceXCounter > 3)
           {
-            printf("no\n");
-            printf("3\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("3\n");
+            }
+
             should_continue = 0;
             break;
           }
           else if (sequenceXCounter < 1)
           {
-            printf("no\n");
-            printf("4\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("4\n");
+            }
+
             should_continue = 0;
             break;
           }
@@ -304,15 +362,23 @@ void flag_b(char* arguments[], int tFlag)
           //check equals
           if (letterQCounter > 7)
           {
-            printf("no\n");
-            printf("6\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("6\n");
+            }
+
             should_continue = 0;
             break;
           }
           else if (letterQCounter < 3)
           {
-            printf("no\n");
-            printf("7\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("7\n");
+            }
+
             should_continue = 0;
             break;
           }
@@ -325,21 +391,28 @@ void flag_b(char* arguments[], int tFlag)
           //Attempting to stop a seg fault before it happens.
           if (sequenceYCounter >= 2)
           {
-            printf("no\n");
-            printf("too many digits. Trying to stop seg fault for 'y'\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("too many digits. Trying to stop seg fault for 'y'\n");
+            }
+
             should_continue = 0;
             break;
           }
 
           if (equalsCounter!= 1)
           {
-            printf("no\n");
-            printf("8\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("8\n");
+            }
+
             should_continue = 0;
             break;
           }
 
-          printf("Adding this to sequenceY: %d\n", *currentCharacater);
           sequenceY[sequenceYCounter] = *currentCharacater;
 
           sequenceYCounter++;
@@ -364,16 +437,22 @@ void flag_b(char* arguments[], int tFlag)
             //then, we compare
             if (newSequenceX[0] != sequenceY[0]) //if they're not a match
             {
-              printf("no\n");
-              printf("9\n");
+              if (tFlag == 0)
+              {
+                printf("no\n");
+                printf("9\n");
+              }
 
               should_continue = 0;
               break;
             }
             if (newSequenceX[1] != sequenceY[1]) //if they're not a match
             {
-              printf("no\n");
-              printf("10\n");
+              if (tFlag == 0)
+              {
+                printf("no\n");
+                printf("10\n");
+              }
 
               should_continue = 0;
               break;
@@ -382,9 +461,11 @@ void flag_b(char* arguments[], int tFlag)
         }
         else
         {
-          //this means a bad character was in the string
-          printf("no\n");
-          printf("current character %d\n", *currentCharacater);
+          if (tFlag == 0)
+          {
+            printf("no\n");
+            printf("current character %d\n", *currentCharacater);
+          }
 
           // printf("Bad character%s\n", *currentCharacater);
           should_continue = 0;
@@ -397,8 +478,12 @@ void flag_b(char* arguments[], int tFlag)
      {
        if (upperCaseCount%2 == 0) //If even
        {
-         printf("no\n");
-         printf("7\n");
+         if (tFlag == 0)
+         {
+           printf("no\n");
+           printf("7\n");
+         }
+
        }
        //Since it has passed all of these tests, we know it's matching so we
        //print yes!
@@ -503,9 +588,12 @@ void flag_c(char* arguments[], int tFlag)
    //check if first character is not b
    if (*currentArgument != 'd' && *currentArgument != '=')
    {
-     printf("no\n");
-     printf("initial check\n" );
-   }
+     if (tFlag == 0)
+     {
+       printf("no\n");
+       printf("initial check\n" );
+     }
+
    else
    {
      //iterate through each character in order to check the Criteria.
@@ -525,8 +613,12 @@ void flag_c(char* arguments[], int tFlag)
           //we know that b should be done at this point. Check it's truthfulness.
           if (letterDCounter%2 != 0) //If odd
           {
-            printf("no\n");
-            printf("1\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("1\n");
+            }
+
             should_continue = 0;
             break;
           }
@@ -538,8 +630,12 @@ void flag_c(char* arguments[], int tFlag)
           //Attempting to stop a seg fault before it happens.
           if (sequenceXCounter >=3)
           {
-            printf("no\n");
-            printf("too many digits. Trying to stop seg fault\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("too many digits. Trying to stop seg fault\n");
+            }
+
             should_continue = 0;
             break;
           }
@@ -547,13 +643,16 @@ void flag_c(char* arguments[], int tFlag)
           //We know that the colon character should be done. Check it's truthfulness.
           if (equalsCounter != 1)
           {
-            printf("no\n");
-            printf("2\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("2\n");
+            }
+
             should_continue = 0;
             break;
           }
 
-          printf("Adding this to sequenceX: %d\n", *currentCharacater);
           sequenceX[sequenceXCounter] = *currentCharacater;
           sequenceXCounter++;
 
@@ -564,15 +663,23 @@ void flag_c(char* arguments[], int tFlag)
 
           if (sequenceXCounter > 3)
           {
-            printf("no\n");
-            printf("3\n");
+            if (tFlag == 0 )
+            {
+              printf("no\n");
+              printf("3\n");
+            }
+
             should_continue = 0;
             break;
           }
           else if (sequenceXCounter < 1)
           {
-            printf("no\n");
-            printf("4\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("4\n");
+            }
+
             should_continue = 0;
             break;
           }
@@ -585,8 +692,12 @@ void flag_c(char* arguments[], int tFlag)
           //check equals
           if (letterUCounter == 0)
           {
-            printf("no\n");
-            printf("6\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("6\n");
+            }
+
             should_continue = 0;
             break;
           }
@@ -600,21 +711,28 @@ void flag_c(char* arguments[], int tFlag)
           //Attempting to stop a seg fault before it happens.
           if (sequenceYCounter >= 3)
           {
-            printf("no\n");
-            printf("too many digits. Trying to stop seg fault for 'y'\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("too many digits. Trying to stop seg fault for 'y'\n");
+            }
+
             should_continue = 0;
             break;
           }
 
           if (underscoreCounter != 1)
           {
-            printf("no\n");
-            printf("8\n");
+            if (tFlag == 0)
+            {
+              printf("no\n");
+              printf("8\n");
+            }
+
             should_continue = 0;
             break;
           }
 
-          printf("Adding this to sequenceY: %d\n", *currentCharacater);
           sequenceY[sequenceYCounter] = *currentCharacater;
           sequenceYCounter++;
         }
@@ -627,23 +745,35 @@ void flag_c(char* arguments[], int tFlag)
               //then, we compare
               if (sequenceX[0] != sequenceY[2]) //if they're not a match
               {
-                printf("no\n");
-                printf("9\n");
+                if (tFlag == 0)
+                {
+                  printf("no\n");
+                  printf("9\n");
+                }
+
                 should_continue = 0;
                 break;
               }
               if (sequenceX[1] != sequenceY[1]) //if they're not a match
               {
-                printf("no\n");
-                printf("10\n");
+                if (tFlag == 0)
+                {
+                  printf("no\n");
+                  printf("10\n");
+                }
+
 
                 should_continue = 0;
                 break;
               }
               if (sequenceX[2] != sequenceY[0]) //if they're not a match
               {
-                printf("no\n");
-                printf("11\n");
+                if (tFlag == 0)
+                {
+                  printf("no\n");
+                  printf("11\n");
+                }
+
 
                 should_continue = 0;
                 break;
@@ -653,15 +783,23 @@ void flag_c(char* arguments[], int tFlag)
             {
               if (sequenceX[0] != sequenceY[1]) //if they're not a match
               {
-                printf("no\n");
-                printf("12\n");
+                if (tFlag == 0)
+                {
+                  printf("no\n");
+                  printf("12\n");
+                }
+
                 should_continue = 0;
                 break;
               }
               if (sequenceX[1] != sequenceY[0]) //if they're not a match
               {
-                printf("no\n");
-                printf("13\n");
+                if (tFlag == 0)
+                {
+                  printf("no\n");
+                  printf("13\n");
+                }
+
                 should_continue = 0;
                 break;
               }
@@ -670,8 +808,12 @@ void flag_c(char* arguments[], int tFlag)
             {
               if (sequenceX[0] != sequenceY[0]) //if they're not a match
               {
-                printf("no\n");
-                printf("14\n");
+                if (tFlag == 0)
+                {
+                  printf("no\n");
+                  printf("14\n");
+                }
+
                 should_continue = 0;
                 break;
               }
@@ -682,9 +824,13 @@ void flag_c(char* arguments[], int tFlag)
         }
         else
         {
-          //this means a bad character was in the string
-          printf("no\n");
-          printf("current character %d\n", *currentCharacater);
+          if (tFlag == 0)
+          {
+            //this means a bad character was in the string
+            printf("no\n");
+            printf("current character %d\n", *currentCharacater);
+          }
+
 
           // printf("Bad character%s\n", *currentCharacater);
           should_continue = 0;
@@ -697,8 +843,12 @@ void flag_c(char* arguments[], int tFlag)
      {
        if (upperCaseCount%2 == 0) //If even
        {
-         printf("no\n");
-         printf("7\n");
+         if (tFlag == 0)
+         {
+           printf("no\n");
+           printf("7\n");
+         }
+
        }
        //Since it has passed all of these tests, we know it's matching so we
        //print yes!
