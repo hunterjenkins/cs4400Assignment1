@@ -66,7 +66,7 @@ void flag_a(char* arguments[], int tFlag)
              }
 
              should_continue = 0;
-             break;
+             continue;
            }
 
            underscoreCounter++;
@@ -84,7 +84,7 @@ void flag_a(char* arguments[], int tFlag)
              }
 
              should_continue = 0;
-             break;
+             continue;
            }
            else if (underscoreCounter > 1)
            {
@@ -94,7 +94,7 @@ void flag_a(char* arguments[], int tFlag)
              }
 
               should_continue = 0;
-              break;
+              continue;
            }
 
            letterTCounter++;
@@ -111,7 +111,7 @@ void flag_a(char* arguments[], int tFlag)
              }
 
              should_continue = 0;
-             break;
+             continue;
            }
            else if (letterTCounter < 3)
            {
@@ -121,7 +121,7 @@ void flag_a(char* arguments[], int tFlag)
              }
 
              should_continue = 0;
-             break;
+             continue;
            }
 
 
@@ -137,7 +137,7 @@ void flag_a(char* arguments[], int tFlag)
              }
 
              should_continue = 0;
-             break;
+             continue;
            }
 
            upperCaseCount++;
@@ -150,7 +150,7 @@ void flag_a(char* arguments[], int tFlag)
            }
 
            should_continue = 0;
-           break;
+           continue;
          }
       }
 
@@ -282,7 +282,7 @@ void flag_b(char* arguments[], int tFlag)
             }
 
             should_continue = 0;
-            break;
+            continue;
           }
 
           colonCounter++;
@@ -298,7 +298,7 @@ void flag_b(char* arguments[], int tFlag)
             }
 
             should_continue = 0;
-            break;
+            continue;
           }
 
           //We know that the colon character should be done. Check it's truthfulness.
@@ -310,7 +310,7 @@ void flag_b(char* arguments[], int tFlag)
             }
 
             should_continue = 0;
-            break;
+            continue;
           }
 
           sequenceX[sequenceXCounter] = *currentCharacater;
@@ -329,7 +329,7 @@ void flag_b(char* arguments[], int tFlag)
             }
 
             should_continue = 0;
-            break;
+            continue;
           }
           else if (sequenceXCounter < 1)
           {
@@ -339,7 +339,7 @@ void flag_b(char* arguments[], int tFlag)
             }
 
             should_continue = 0;
-            break;
+            continue;
           }
 
           letterQCounter++;
@@ -356,7 +356,7 @@ void flag_b(char* arguments[], int tFlag)
             }
 
             should_continue = 0;
-            break;
+            continue;
           }
           else if (letterQCounter < 3)
           {
@@ -366,7 +366,7 @@ void flag_b(char* arguments[], int tFlag)
             }
 
             should_continue = 0;
-            break;
+            continue;
           }
 
           equalsCounter++;
@@ -383,7 +383,7 @@ void flag_b(char* arguments[], int tFlag)
             }
 
             should_continue = 0;
-            break;
+            continue;
           }
 
           if (equalsCounter!= 1)
@@ -394,7 +394,7 @@ void flag_b(char* arguments[], int tFlag)
             }
 
             should_continue = 0;
-            break;
+            continue;
           }
 
           sequenceY[sequenceYCounter] = *currentCharacater;
@@ -427,7 +427,7 @@ void flag_b(char* arguments[], int tFlag)
               }
 
               should_continue = 0;
-              break;
+              continue;
             }
             if (newSequenceX[1] != sequenceY[1]) //if they're not a match
             {
@@ -437,7 +437,7 @@ void flag_b(char* arguments[], int tFlag)
               }
 
               should_continue = 0;
-              break;
+              continue;
             }
             upperCaseCount++;
         }
@@ -450,7 +450,7 @@ void flag_b(char* arguments[], int tFlag)
 
           // printf("Bad character%s\n", *currentCharacater);
           should_continue = 0;
-          break;
+          continue;
         }
      }
 
@@ -594,7 +594,7 @@ void flag_c(char* arguments[], int tFlag)
           {
             printf("no\n");
             should_continue = 0;
-            break;
+            continue;
           }
 
           equalsCounter++;
@@ -606,7 +606,7 @@ void flag_c(char* arguments[], int tFlag)
           {
             printf("no\n");
             should_continue = 0;
-            break;
+            continue;
           }
 
           //We know that the colon character should be done. Check it's truthfulness.
@@ -615,7 +615,7 @@ void flag_c(char* arguments[], int tFlag)
             printf("no\n");
             printf("2\n");
             should_continue = 0;
-            break;
+            continue;
           }
 
           sequenceX[sequenceXCounter] = *currentCharacater;
@@ -630,13 +630,13 @@ void flag_c(char* arguments[], int tFlag)
           {
             printf("no\n");
             should_continue = 0;
-            break;
+            continue;
           }
           else if (sequenceXCounter < 1)
           {
             printf("no\n");
             should_continue = 0;
-            break;
+            continue;
           }
 
           letterUCounter++;
@@ -649,7 +649,7 @@ void flag_c(char* arguments[], int tFlag)
           {
             printf("no\n");
             should_continue = 0;
-            break;
+            continue;
           }
 
 
@@ -663,14 +663,14 @@ void flag_c(char* arguments[], int tFlag)
           {
             printf("no\n");
             should_continue = 0;
-            break;
+            continue;
           }
 
           if (underscoreCounter != 1)
           {
             printf("no\n");
             should_continue = 0;
-            break;
+            continue;
           }
 
           sequenceY[sequenceYCounter] = *currentCharacater;
@@ -687,21 +687,21 @@ void flag_c(char* arguments[], int tFlag)
               {
                 printf("no\n");
                 should_continue = 0;
-                break;
+                continue;
               }
               if (sequenceX[1] != sequenceY[1]) //if they're not a match
               {
                 printf("no\n");
 
                 should_continue = 0;
-                break;
+                continue;
               }
               if (sequenceX[2] != sequenceY[0]) //if they're not a match
               {
                 printf("no\n");
 
                 should_continue = 0;
-                break;
+                continue;
               }
             }
             else if (sequenceXCounter == 2)
@@ -710,13 +710,13 @@ void flag_c(char* arguments[], int tFlag)
               {
                 printf("no\n");
                 should_continue = 0;
-                break;
+                continue;
               }
               if (sequenceX[1] != sequenceY[0]) //if they're not a match
               {
                 printf("no\n");
                 should_continue = 0;
-                break;
+                continue;
               }
             }
             else if (sequenceXCounter == 1)
@@ -725,7 +725,7 @@ void flag_c(char* arguments[], int tFlag)
               {
                 printf("no\n");
                 should_continue = 0;
-                break;
+                continue;
               }
             }
 
@@ -739,7 +739,7 @@ void flag_c(char* arguments[], int tFlag)
 
           // printf("Bad character%s\n", *currentCharacater);
           should_continue = 0;
-          break;
+          continue;
         }
      }
 
