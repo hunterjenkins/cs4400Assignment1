@@ -147,29 +147,25 @@ void flag_a(char* arguments[], int tFlag)
             printf("Current arg: %s\n", currentArgument);
 
             char* pointer = currentArgument;
-
-            int index = 0;
-
+	    int sizeOfString = 0;
+	    
             while (*pointer != '\0')
             {
-              char* tempPointer = ++pointer;
-              if (*tempPointer == '\0')   //This is the last character
-              {
-                printf("last character\n" );
-                pointer[0] = *tempPointer;
-              }
-              else {
-                char temp = pointer[index];
-                pointer[index] = pointer[index+1];
-
-
-                printf("%c\n", *pointer);
-                pointer++;
-                index++;
-              }
+	      sizeOfString++;
+               pointer++;	       
             }
 
-            printf("new arg: %s\n", pointer);
+	    char* newPointer = currentArgument;
+	    char last = newPointer[sizeOfString-1];
+
+	    int index; //Start on last index
+	    for (index = sizeOfString-1; index > 0; index--)
+	    {
+	      newPointer[index] = newPointer[index-1];
+	    }
+	    newPointer[0] = last;
+
+	    printf("%s\n", newPointer);
 
           }
 
@@ -409,7 +405,56 @@ void flag_b(char* arguments[], int tFlag)
        //print yes!
        else
        {
-         printf("yes\n");
+	 if (tFlag == 0)
+	 {
+	   printf("yes\n");
+	 }
+	 else 
+	 {
+	   //Do the conversion
+	   char*pointer = currentArgument; 
+	   int sizeOfString = 0;
+	   int Acounter = 0;
+
+	   //Gather the size of the array with how many A's there are. 
+	   while (*pointer != '\0')
+	   {
+	     if (*pointer == 'A')
+	     {
+	       Acounter++;
+	     }
+	     sizeOfString++;
+	     pointer++;
+	   }
+
+	   char * newPointer = currentArgument;
+	   int size = sizeOfString + Acounter;
+	   printf("A counter %d\n", Acounter);
+	   char arrayString[size];
+	   memset(arrayString, 0, sizeOfString+Acounter);
+
+	   int index;
+	   int arrayStringIndex = 0;
+	   for (index = 0; index < sizeOfString; index++)
+	   {
+	     
+	     if (*newPointer == 'A')
+	     {
+	       arrayString[arrayStringIndex] = 'F';
+	       arrayStringIndex++;
+	       arrayString[arrayStringIndex] = 'A';
+	     }
+	     else 
+	     {
+	       arrayString[arrayStringIndex] = *newPointer;
+	     }
+	     arrayStringIndex++;
+	     newPointer++;
+	   }
+	   printf("%s\n", arrayString);
+
+	 }
+         
        }
      }
    }
